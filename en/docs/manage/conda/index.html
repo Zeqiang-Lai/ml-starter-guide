@@ -2,15 +2,13 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Columns #  Columns help organize shorter pieces of content horizontally for readability.
-{{< columns >}} <!-- begin columns block --> # Left Content Lorem markdownum insigne... <---> <!-- magic separator, between columns --> # Mid Content Lorem markdownum insigne... <---> <!-- magic separator, between columns --> # Right Content Lorem markdownum insigne... {{< /columns >}} Example #  Left Content #  Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!">
+<meta name=description content="管理公共 conda 环境 https://www.whcsrl.com/blog/1006612">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Columns #  Columns help organize shorter pieces of content horizontally for readability.
-{{< columns >}} <!-- begin columns block --> # Left Content Lorem markdownum insigne... <---> <!-- magic separator, between columns --> # Mid Content Lorem markdownum insigne... <---> <!-- magic separator, between columns --> # Right Content Lorem markdownum insigne... {{< /columns >}} Example #  Left Content #  Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!">
+<meta property="og:description" content="管理公共 conda 环境 https://www.whcsrl.com/blog/1006612">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/en/docs/hugo/columns/"><meta property="article:section" content="docs">
-<title>Columns | 深度学习新手指南</title>
+<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/en/docs/manage/conda/"><meta property="article:section" content="docs">
+<title>Conda | 深度学习新手指南</title>
 <link rel=manifest href=/ml-starter-guide/manifest.json>
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin=anonymous>
@@ -54,7 +52,7 @@ User
 </ul>
 <ul>
 <li class=book-section-flat>
-<input type=checkbox id=section-3e17e208104cad2224181a45c62b6d9f class=toggle checked>
+<input type=checkbox id=section-3e17e208104cad2224181a45c62b6d9f class=toggle>
 <label for=section-3e17e208104cad2224181a45c62b6d9f class="flex justify-between">
 <a href=/ml-starter-guide/en/docs/hugo/>Hugo</a>
 </label>
@@ -63,7 +61,7 @@ User
 <a href=/ml-starter-guide/en/docs/hugo/buttons/>Buttons</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/hugo/columns/ class=active>Columns</a>
+<a href=/ml-starter-guide/en/docs/hugo/columns/>Columns</a>
 </li>
 <li>
 <a href=/ml-starter-guide/en/docs/hugo/details/>Details</a>
@@ -103,7 +101,7 @@ User
 <span>Manage</span>
 <ul>
 <li>
-<a href=/ml-starter-guide/en/docs/manage/conda/>Conda</a>
+<a href=/ml-starter-guide/en/docs/manage/conda/ class=active>Conda</a>
 </li>
 </ul>
 </li>
@@ -125,76 +123,17 @@ Github
 <label for=menu-control>
 <img src=/ml-starter-guide/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Columns</strong>
+<strong>Conda</strong>
 <label for=toc-control>
 <img src=/ml-starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#columns>Columns</a>
-<ul>
-<li><a href=#example>Example</a></li>
-</ul>
-</li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </aside>
 </header>
-<article class=markdown><h1 id=columns>
-Columns
-<a class=anchor href=#columns>#</a>
-</h1>
-<p>Columns help organize shorter pieces of content horizontally for readability.</p>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{<span style=color:#111>&lt;</span> <span style=color:#f92672>columns</span> <span style=color:#111>&gt;</span>}} <span style=color:#75715e>&lt;!-- begin columns block --&gt;</span>
-# Left Content
-Lorem markdownum insigne...
-
-<span style=color:#111>&lt;</span><span style=color:#f92672>---</span><span style=color:#111>&gt;</span> <span style=color:#75715e>&lt;!-- magic separator, between columns --&gt;</span>
-
-# Mid Content
-Lorem markdownum insigne...
-
-<span style=color:#111>&lt;</span><span style=color:#f92672>---</span><span style=color:#111>&gt;</span> <span style=color:#75715e>&lt;!-- magic separator, between columns --&gt;</span>
-
-# Right Content
-Lorem markdownum insigne...
-{{<span style=color:#111>&lt;</span> <span style=color:#111>/</span><span style=color:#f92672>columns</span> <span style=color:#111>&gt;</span>}}
-</code></pre></div><h2 id=example>
-Example
-<a class=anchor href=#example>#</a>
-</h2>
-<div class="book-columns flex flex-wrap">
-<div class="flex-even markdown-inner">
-<h2 id=left-content>
-Left Content
-<a class=anchor href=#left-content>#</a>
-</h2>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-protulit, sed sed aere valvis inhaesuro Pallas animam: qui <em>quid</em>, ignes.
-Miseratus fonte Ditis conubia.
-</div>
-<div class="flex-even markdown-inner">
-<h2 id=mid-content>
-Mid Content
-<a class=anchor href=#mid-content>#</a>
-</h2>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter!
-</div>
-<div class="flex-even markdown-inner">
-<h2 id=right-content>
-Right Content
-<a class=anchor href=#right-content>#</a>
-</h2>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-protulit, sed sed aere valvis inhaesuro Pallas animam: qui <em>quid</em>, ignes.
-Miseratus fonte Ditis conubia.
-</div>
-</div>
+<article class=markdown><p>管理公共 conda 环境
+<a href=https://www.whcsrl.com/blog/1006612>https://www.whcsrl.com/blog/1006612</a></p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
@@ -207,15 +146,7 @@ Miseratus fonte Ditis conubia.
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#columns>Columns</a>
-<ul>
-<li><a href=#example>Example</a></li>
-</ul>
-</li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </div>
 </aside>
 </main>
