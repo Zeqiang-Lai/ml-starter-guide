@@ -17,7 +17,7 @@ markup:
   tableOfContents:
     startLevel: 1
   highlight:
-    style: monokailight
+    noclasses: false
 
 # Multi-lingual mode config
 # There are different options to translate files
