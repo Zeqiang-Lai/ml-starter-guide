@@ -19,11 +19,6 @@ type: docs
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 ```
 
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" />
-<link href="http://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet">
-```
-
 训练
 
 ```shell
