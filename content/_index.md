@@ -19,9 +19,19 @@ type: docs
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 ```
 
-命令行显示图片
+训练
 
 ```shell
+nvidia-smi
+export CUDA_VISIBLE_DEVICES=1
+source activate /share/envs/qrnn3d
+```
+
+Linux 常用命令
+
+```shell
+ls -sh # 查看文件大小
+df -h # 查看磁盘占用空间
 ```
 
 
