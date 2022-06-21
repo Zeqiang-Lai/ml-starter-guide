@@ -1,0 +1,210 @@
+<!doctype html><html lang=zh dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Mermaid Chart #   MermaidJS is library for generating svg charts and diagrams from text.
+Override Mermaid Initialization Config
+To override the initialization config for Mermaid, create a mermaid.json file in your assets folder!
+ Example #  {{< mermaid [class=&#34;text-center&#34;]>}} stateDiagram-v2 State1: The state with a note note right of State1 Important information! You can write notes. end note State1 --> State2 note left of State2 : This is the note to the left.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
+<meta property="og:description" content="Mermaid Chart #   MermaidJS is library for generating svg charts and diagrams from text.
+Override Mermaid Initialization Config
+To override the initialization config for Mermaid, create a mermaid.json file in your assets folder!
+ Example #  {{< mermaid [class=&#34;text-center&#34;]>}} stateDiagram-v2 State1: The state with a note note right of State1 Important information! You can write notes. end note State1 --> State2 note left of State2 : This is the note to the left.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.com/en/docs/hugo/mermaid/"><meta property="article:section" content="docs">
+<title>Mermaid | 深度学习新手指南</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.4c7e8664cc8dc06f48f652c6e3e5af0e101af9b9b58f84cc3b31f4c5a9b1eec9.js integrity="sha256-TH6GZMyNwG9I9lLG4+WvDhAa+bm1j4TMOzH0xamx7sk=" crossorigin=anonymous></script>
+<script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/en/><span>深度学习新手指南</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul class=book-languages>
+<li>
+<input type=checkbox id=languages class=toggle>
+<label for=languages class="flex justify-between">
+<a role=button class="flex align-center">
+<img src=/svg/translate.svg class=book-icon alt=Languages>
+Maintainer
+</a>
+</label>
+<ul>
+<li>
+<a href=https://example.com/>
+User
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class=book-section-flat>
+<input type=checkbox id=section-3e17e208104cad2224181a45c62b6d9f class=toggle checked>
+<label for=section-3e17e208104cad2224181a45c62b6d9f class="flex justify-between">
+<a href=/en/docs/hugo/>Hugo</a>
+</label>
+<ul>
+<li>
+<a href=/en/docs/hugo/buttons/>Buttons</a>
+</li>
+<li>
+<a href=/en/docs/hugo/columns/>Columns</a>
+</li>
+<li>
+<a href=/en/docs/hugo/details/>Details</a>
+</li>
+<li>
+<a href=/en/docs/hugo/expand/>Expand</a>
+</li>
+<li>
+<a href=/en/docs/hugo/hints/>Hints</a>
+</li>
+<li>
+<a href=/en/docs/hugo/katex/>Katex</a>
+</li>
+<li>
+<a href=/en/docs/hugo/mermaid/ class=active>Mermaid</a>
+</li>
+<li>
+<input type=checkbox id=section-2372b75c2daed1eca244d2f26c2ef0da class=toggle>
+<label for=section-2372b75c2daed1eca244d2f26c2ef0da class="flex justify-between">
+<a href=/en/docs/hugo/section/>Section</a>
+</label>
+<ul>
+<li>
+<a href=/en/docs/hugo/section/first-page/>First Page</a>
+</li>
+<li>
+<a href=/en/docs/hugo/section/second-page/>Second Page</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=/en/docs/hugo/tabs/>Tabs</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/alex-shpak/hugo-book target=_blank rel=noopener>
+Github
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Mermaid</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#mermaid-chart>Mermaid Chart</a>
+<ul>
+<li><a href=#example>Example</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=mermaid-chart>
+Mermaid Chart
+<a class=anchor href=#mermaid-chart>#</a>
+</h1>
+<p>
+<a href=https://mermaid-js.github.io/>MermaidJS</a> is library for generating svg charts and diagrams from text.</p>
+<blockquote class="book-hint info">
+<p><strong>Override Mermaid Initialization Config</strong></p>
+<p>To override the
+<a href=https://mermaid-js.github.io/mermaid/#/Setup>initialization config</a> for Mermaid,
+create a <code>mermaid.json</code> file in your <code>assets</code> folder!</p>
+</blockquote>
+<h2 id=example>
+Example
+<a class=anchor href=#example>#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+<div class="flex-even markdown-inner">
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tpl data-lang=tpl><span style=color:#75715e>{{</span><span style=color:#f92672>&lt;</span> <span style=color:#75af00>mermaid</span> <span style=color:#f92672>[</span><span style=color:#75af00>class</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;text-center&#34;</span><span style=color:#f92672>]&gt;</span><span style=color:#75715e>}}</span>
+stateDiagram-v2
+    State1: The state with a note
+    note right of State1
+        Important information! You can write
+        notes.
+    end note
+    State1 --&gt; State2
+    note left of State2 : This is the note to the left.
+<span style=color:#75715e>{{</span><span style=color:#f92672>&lt;</span> <span style=color:#f92672>/</span><span style=color:#75af00>mermaid</span> <span style=color:#f92672>&gt;</span><span style=color:#75715e>}}</span>
+</code></pre></div>
+</div>
+<div class="flex-even markdown-inner">
+<script src=/mermaid.min.js></script>
+<script>mermaid.initialize({flowchart:{useMaxWidth:!0},theme:"default"})</script>
+<p class=mermaid>
+stateDiagram-v2
+State1: The state with a note
+note right of State1
+Important information! You can write
+notes.
+end note
+State1 --> State2
+note left of State2 : This is the note to the left.
+</div>
+</div>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#mermaid-chart>Mermaid Chart</a>
+<ul>
+<li><a href=#example>Example</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>

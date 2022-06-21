@@ -1,0 +1,377 @@
+<!doctype html><html lang=zh dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="公用数据集 #  Real Denoising #  ELD #  真实暗光去噪数据集
+ 来源： Vandermode/ELD 服务器存放路径: /data/dataset/real_denoising/ELD  示例图:
+文件结构:
+SIDD #  RGB Restoration #  BSD500 #  DIV2K #  Flick2K #  Train400 #  Denoise Test #  BSD68 #  CBSD68 #  Kodak24 #  McMaster #  RNI15 #  RNI6 #  Set12 #  SR Test #  BSD100 #  Set14 #  Set5 #  SunHays80 #  Urban100 #  Hyperspectral #  ICVL #  CAVE #  Harvard #  Remote Sensed #  Pavia #  Urban #  Indian #  Optical Flow #  KITTI 2012 #  KITTI 2015 #  Face #  Celeba #  High Level #  VOC2012 #  ">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="数据集">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/docs/share/dataset/">
+<title>数据集 | 深度学习新手指南</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/zh.search.min.ab25a1994a23d3c7b03329a25c7ba1e78e909abae85306e1e1acd26658bc2aee.js integrity="sha256-qyWhmUoj08ewMymiXHuh546QmrroUwbh4azSZli8Ku4=" crossorigin=anonymous></script>
+<script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script>
+<link rel=alternate type=application/rss+xml href=https://example.com/docs/share/dataset/index.xml title=深度学习新手指南>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>深度学习新手指南</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul class=book-languages>
+<li>
+<input type=checkbox id=languages class=toggle>
+<label for=languages class="flex justify-between">
+<a role=button class="flex align-center">
+<img src=/svg/translate.svg class=book-icon alt=Languages>
+User
+</a>
+</label>
+<ul>
+<li>
+<a href=https://example.com/en/>
+Maintainer
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class=book-section-flat>
+<a href=/docs/share/>公共资源</a>
+<ul>
+<li>
+<a href=/docs/share/dataset/ class=active>数据集</a>
+<ul>
+</ul>
+</li>
+<li>
+<a href=/docs/share/software/>软件</a>
+</li>
+<li>
+<a href=/docs/share/env/>Conda环境</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=/posts/>
+教程
+</a>
+</li>
+<li>
+<a href=https://github.com/alex-shpak/hugo-book target=_blank rel=noopener>
+Github
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>数据集</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#公用数据集>公用数据集</a>
+<ul>
+<li><a href=#real-denoising>Real Denoising</a>
+<ul>
+<li><a href=#eld>ELD</a></li>
+<li><a href=#sidd>SIDD</a></li>
+</ul>
+</li>
+<li><a href=#rgb-restoration>RGB Restoration</a>
+<ul>
+<li><a href=#bsd500>BSD500</a></li>
+<li><a href=#div2k>DIV2K</a></li>
+<li><a href=#flick2k>Flick2K</a></li>
+<li><a href=#train400>Train400</a></li>
+<li><a href=#denoise-test>Denoise Test</a></li>
+<li><a href=#sr-test>SR Test</a></li>
+</ul>
+</li>
+<li><a href=#hyperspectral>Hyperspectral</a>
+<ul>
+<li><a href=#icvl>ICVL</a></li>
+<li><a href=#cave>CAVE</a></li>
+<li><a href=#harvard>Harvard</a></li>
+<li><a href=#remote-sensed>Remote Sensed</a></li>
+</ul>
+</li>
+<li><a href=#optical-flow>Optical Flow</a>
+<ul>
+<li><a href=#kitti-2012>KITTI 2012</a></li>
+<li><a href=#kitti-2015>KITTI 2015</a></li>
+</ul>
+</li>
+<li><a href=#face>Face</a>
+<ul>
+<li><a href=#celeba>Celeba</a></li>
+</ul>
+</li>
+<li><a href=#high-level>High Level</a>
+<ul>
+<li><a href=#voc2012>VOC2012</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=公用数据集>
+公用数据集
+<a class=anchor href=#%e5%85%ac%e7%94%a8%e6%95%b0%e6%8d%ae%e9%9b%86>#</a>
+</h1>
+<h2 id=real-denoising>
+Real Denoising
+<a class=anchor href=#real-denoising>#</a>
+</h2>
+<h3 id=eld>
+ELD
+<a class=anchor href=#eld>#</a>
+</h3>
+<p>真实暗光去噪数据集</p>
+<ul>
+<li>来源：
+<a href=https://github.com/Vandermode/ELD>Vandermode/ELD</a></li>
+<li>服务器存放路径: <code>/data/dataset/real_denoising/ELD</code></li>
+</ul>
+<p>示例图:</p>
+<p>文件结构:</p>
+<pre tabindex=0><code></code></pre><h3 id=sidd>
+SIDD
+<a class=anchor href=#sidd>#</a>
+</h3>
+<h2 id=rgb-restoration>
+RGB Restoration
+<a class=anchor href=#rgb-restoration>#</a>
+</h2>
+<h3 id=bsd500>
+BSD500
+<a class=anchor href=#bsd500>#</a>
+</h3>
+<h3 id=div2k>
+DIV2K
+<a class=anchor href=#div2k>#</a>
+</h3>
+<h3 id=flick2k>
+Flick2K
+<a class=anchor href=#flick2k>#</a>
+</h3>
+<h3 id=train400>
+Train400
+<a class=anchor href=#train400>#</a>
+</h3>
+<h3 id=denoise-test>
+Denoise Test
+<a class=anchor href=#denoise-test>#</a>
+</h3>
+<h4 id=bsd68>
+BSD68
+<a class=anchor href=#bsd68>#</a>
+</h4>
+<h4 id=cbsd68>
+CBSD68
+<a class=anchor href=#cbsd68>#</a>
+</h4>
+<h4 id=kodak24>
+Kodak24
+<a class=anchor href=#kodak24>#</a>
+</h4>
+<h4 id=mcmaster>
+McMaster
+<a class=anchor href=#mcmaster>#</a>
+</h4>
+<h4 id=rni15>
+RNI15
+<a class=anchor href=#rni15>#</a>
+</h4>
+<h4 id=rni6>
+RNI6
+<a class=anchor href=#rni6>#</a>
+</h4>
+<h4 id=set12>
+Set12
+<a class=anchor href=#set12>#</a>
+</h4>
+<h3 id=sr-test>
+SR Test
+<a class=anchor href=#sr-test>#</a>
+</h3>
+<h4 id=bsd100>
+BSD100
+<a class=anchor href=#bsd100>#</a>
+</h4>
+<h4 id=set14>
+Set14
+<a class=anchor href=#set14>#</a>
+</h4>
+<h4 id=set5>
+Set5
+<a class=anchor href=#set5>#</a>
+</h4>
+<h4 id=sunhays80>
+SunHays80
+<a class=anchor href=#sunhays80>#</a>
+</h4>
+<h4 id=urban100>
+Urban100
+<a class=anchor href=#urban100>#</a>
+</h4>
+<h2 id=hyperspectral>
+Hyperspectral
+<a class=anchor href=#hyperspectral>#</a>
+</h2>
+<h3 id=icvl>
+ICVL
+<a class=anchor href=#icvl>#</a>
+</h3>
+<h3 id=cave>
+CAVE
+<a class=anchor href=#cave>#</a>
+</h3>
+<h3 id=harvard>
+Harvard
+<a class=anchor href=#harvard>#</a>
+</h3>
+<h3 id=remote-sensed>
+Remote Sensed
+<a class=anchor href=#remote-sensed>#</a>
+</h3>
+<h4 id=pavia>
+Pavia
+<a class=anchor href=#pavia>#</a>
+</h4>
+<h4 id=urban>
+Urban
+<a class=anchor href=#urban>#</a>
+</h4>
+<h4 id=indian>
+Indian
+<a class=anchor href=#indian>#</a>
+</h4>
+<h2 id=optical-flow>
+Optical Flow
+<a class=anchor href=#optical-flow>#</a>
+</h2>
+<h3 id=kitti-2012>
+KITTI 2012
+<a class=anchor href=#kitti-2012>#</a>
+</h3>
+<h3 id=kitti-2015>
+KITTI 2015
+<a class=anchor href=#kitti-2015>#</a>
+</h3>
+<h2 id=face>
+Face
+<a class=anchor href=#face>#</a>
+</h2>
+<h3 id=celeba>
+Celeba
+<a class=anchor href=#celeba>#</a>
+</h3>
+<h2 id=high-level>
+High Level
+<a class=anchor href=#high-level>#</a>
+</h2>
+<h3 id=voc2012>
+VOC2012
+<a class=anchor href=#voc2012>#</a>
+</h3>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#公用数据集>公用数据集</a>
+<ul>
+<li><a href=#real-denoising>Real Denoising</a>
+<ul>
+<li><a href=#eld>ELD</a></li>
+<li><a href=#sidd>SIDD</a></li>
+</ul>
+</li>
+<li><a href=#rgb-restoration>RGB Restoration</a>
+<ul>
+<li><a href=#bsd500>BSD500</a></li>
+<li><a href=#div2k>DIV2K</a></li>
+<li><a href=#flick2k>Flick2K</a></li>
+<li><a href=#train400>Train400</a></li>
+<li><a href=#denoise-test>Denoise Test</a></li>
+<li><a href=#sr-test>SR Test</a></li>
+</ul>
+</li>
+<li><a href=#hyperspectral>Hyperspectral</a>
+<ul>
+<li><a href=#icvl>ICVL</a></li>
+<li><a href=#cave>CAVE</a></li>
+<li><a href=#harvard>Harvard</a></li>
+<li><a href=#remote-sensed>Remote Sensed</a></li>
+</ul>
+</li>
+<li><a href=#optical-flow>Optical Flow</a>
+<ul>
+<li><a href=#kitti-2012>KITTI 2012</a></li>
+<li><a href=#kitti-2015>KITTI 2015</a></li>
+</ul>
+</li>
+<li><a href=#face>Face</a>
+<ul>
+<li><a href=#celeba>Celeba</a></li>
+</ul>
+</li>
+<li><a href=#high-level>High Level</a>
+<ul>
+<li><a href=#voc2012>VOC2012</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
