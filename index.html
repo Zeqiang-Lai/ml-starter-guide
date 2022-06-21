@@ -5,8 +5,9 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="简介 #  🌟 欢迎来到新手村。
  这里汇总了实验室服务器相关的各种资源使用方法与教程。 常用软件推荐, 各种开发流程优化教程等等。  常用 #  切换 pip 源
-pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ 命令行显示图片
-友情链接 #  来自 Zeqiang Lai:
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ 训练
+nvidia-smi export CUDA_VISIBLE_DEVICES=1 source activate /share/envs/qrnn3d Linux 常用命令
+ls -sh # 查看文件大小 df -h # 查看磁盘占用空间 友情链接 #  来自 Zeqiang Lai:
   常用软件使用指南  机器学习基础知识  torchlight  Contribution #   欢迎贡献文档，欢迎提出意见和建议。  ">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="Introduction">
@@ -131,8 +132,14 @@ Github
 </h2>
 <p>切换 pip 源</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>pip config <span style=color:#111>set</span> global.index-url https://mirrors.aliyun.com/pypi/simple/
-</code></pre></div><p>命令行显示图片</p>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell></code></pre></div><h2 id=友情链接>
+</code></pre></div><p>训练</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nvidia-smi
+<span style=color:#111>export</span> <span style=color:#111>CUDA_VISIBLE_DEVICES</span><span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+<span style=color:#111>source</span> activate /share/envs/qrnn3d
+</code></pre></div><p>Linux 常用命令</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ls -sh <span style=color:#75715e># 查看文件大小</span>
+df -h <span style=color:#75715e># 查看磁盘占用空间</span>
+</code></pre></div><h2 id=友情链接>
 友情链接
 <a class=anchor href=#%e5%8f%8b%e6%83%85%e9%93%be%e6%8e%a5>#</a>
 </h2>
