@@ -1,14 +1,14 @@
 {
   "name": "深度学习新手指南",
   "short_name": "深度学习新手指南",
-  "start_url": "/ml-starter-guide/",
-  "scope": "/ml-starter-guide/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/ml-starter-guide/favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "512x512"
     }
   ]

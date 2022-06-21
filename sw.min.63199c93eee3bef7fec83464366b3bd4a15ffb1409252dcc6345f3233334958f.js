@@ -1,1 +1,0 @@
-navigator.serviceWorker&&navigator.serviceWorker.register("/ml-starter-guide/sw.js",{scope:"/ml-starter-guide/"})
