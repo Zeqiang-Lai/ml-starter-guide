@@ -1,5 +1,4 @@
 ---
-title: "Contributors"
 weight: 20
 ---
 
