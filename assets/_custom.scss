@@ -20,20 +20,20 @@
   font-weight: 600;
 }
 
-.markdown img {
-  margin: auto;
-  display: block;
-  max-width: 70%;
-}
+// .markdown img {
+//   margin: auto;
+//   display: block;
+//   max-width: 70%;
+// }
 
-@media screen and (max-width: $mobile-breakpoint) {
-  .markdown img {
-    max-width: 100%;
-  }
-}
+// @media screen and (max-width: $mobile-breakpoint) {
+//   .markdown img {
+//     max-width: 100%;
+//   }
+// }
 
-@media screen and (min-width: 1920px) {
-  .container {
-    max-width: 95rem;
-  }
-}
+// @media screen and (min-width: 1920px) {
+//   .container {
+//     max-width: 95rem;
+//   }
+// }
