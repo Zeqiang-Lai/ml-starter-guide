@@ -1,0 +1,39 @@
+/* You can add custom styles here. */
+
+// @import "plugins/numbered";
+
+.markdown {
+  font-size: 14.5px;
+  line-height: 1.7em;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-weight: 600;
+}
+
+.book-brand {
+  font-weight: 600;
+}
+
+.markdown img {
+  margin: auto;
+  display: block;
+  max-width: 70%;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .markdown img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 95rem;
+  }
+}

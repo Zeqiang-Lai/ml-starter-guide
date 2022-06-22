@@ -37,7 +37,7 @@ df -h # 查看磁盘占用空间
 
 ## 友情链接
 
-来自 Zeqiang Lai:
+来自[村民一号](https://github.com/Zeqiang-Lai):
 - [常用软件使用指南](https://laizeqiang.notion.site/Software-f61bbdd56c324639900872ed175b214f)
 - [机器学习基础知识](https://laizeqiang.notion.site/Cheatsheet-2ac821b162fa4196986f368d39953474)
 - [torchlight](https://github.com/Zeqiang-Lai/torchlight)
