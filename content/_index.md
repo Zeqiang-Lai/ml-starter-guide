@@ -30,7 +30,8 @@ source activate /share/envs/qrnn3d
 Linux 常用命令
 
 ```shell
-ls -sh # 查看文件大小
+du -sh path # 查看文件大小
+ls -sh # 查看文件夹下的文件,并显示大小
 df -h # 查看磁盘占用空间
 ```
 
