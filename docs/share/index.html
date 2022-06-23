@@ -2,7 +2,12 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Introduction #  ">
+<meta name=description content="公共资源 #  实验室的服务器设置有公共数据集，公共Conda环境，公共软件资源等。
+大家可以按需自行获取使用。
+存放位置 #   数据集: /share/dataset Conda环境: /share/env 软件: /share/software  使用方法 #  数据集
+ 大家可以自行读取，但请不要往/share/dataset写，以及删除东西（虽然你可能根本没有权限）。 使用 torchlight 里的 data.dataset 模块进行读取。（正在实现当中）  Conda环境
+ 查看有哪些环境  ls /share/env 激活环境，以 qrnn3d 为例，（如果出错了，你可能需要先安装 conda）  source activate /share/envs/qrnn3d 为方便大家使用，/share/env 里的环境没有设置权限。因此
+ 大家可以进行 pip install 操作，禁止 uninstall 和 upgrade 。 但是，conda install 是不允许的。（主要考虑是容易破坏包的版本依赖）   ">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="公共资源">
 <meta property="og:description" content>
@@ -13,7 +18,7 @@
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.22a4d79ee28a45bc2b24f778930752c87da4f0cda98eefe1122fcd5d3eda9a98.css integrity="sha256-IqTXnuKKRbwrJPd4kwdSyH2k8M2pju/hEi/NXT7ampg=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/zh.search.min.7fb7fd98eefbd1aaef3e479b1f9b4f75910c82bec74b2fc04f18d885b1a09245.js integrity="sha256-f7f9mO770arvPkebH5tPdZEMgr7HSy/ATxjYhbGgkkU=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.dd0241655ad35d606450840a93a2e01ac7f8ae1555361656df3c61d7d5730897.js integrity="sha256-3QJBZVrTXWBkUIQKk6LgGsf4rhVVNhZW3zxh19VzCJc=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=https://zeqiang-lai.github.io/ml-starter-guide/docs/share/index.xml title=深度学习新手村>
 </head>
@@ -68,6 +73,11 @@ Maintainer
 </li>
 </ul>
 </li>
+<li class=book-section-flat>
+<a href=/ml-starter-guide/docs/faq/>常见问题</a>
+<ul>
+</ul>
+</li>
 </ul>
 <ul>
 <li>
@@ -99,15 +109,57 @@ Github
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#introduction>Introduction</a></li>
+<li><a href=#公共资源>公共资源</a>
+<ul>
+<li><a href=#存放位置>存放位置</a></li>
+<li><a href=#使用方法>使用方法</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class=markdown><h1 id=introduction>
-Introduction
-<a class=anchor href=#introduction>#</a>
+<article class=markdown><h1 id=公共资源>
+公共资源
+<a class=anchor href=#%e5%85%ac%e5%85%b1%e8%b5%84%e6%ba%90>#</a>
 </h1>
+<p>实验室的服务器设置有<strong>公共数据集</strong>，<strong>公共Conda环境</strong>，<strong>公共软件资源</strong>等。</p>
+<p>大家可以按需自行获取使用。</p>
+<h2 id=存放位置>
+存放位置
+<a class=anchor href=#%e5%ad%98%e6%94%be%e4%bd%8d%e7%bd%ae>#</a>
+</h2>
+<ul>
+<li>数据集: <code>/share/dataset</code></li>
+<li>Conda环境: <code>/share/env</code></li>
+<li>软件: <code>/share/software</code></li>
+</ul>
+<h2 id=使用方法>
+使用方法
+<a class=anchor href=#%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95>#</a>
+</h2>
+<p><strong>数据集</strong></p>
+<ol>
+<li>大家可以自行读取，但请不要往<code>/share/dataset</code>写，以及删除东西（虽然你可能根本没有权限）。</li>
+<li>使用
+<a href=/ml-starter-guide/>torchlight</a> 里的 <code>data.dataset</code> 模块进行读取。（正在实现当中）</li>
+</ol>
+<p><strong>Conda环境</strong></p>
+<ol>
+<li>查看有哪些环境</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ls /share/env
+</code></pre></div><ol start=2>
+<li>激活环境，以 <code>qrnn3d</code> 为例，（如果出错了，你可能需要先安装 <code>conda</code>）</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>source</span> activate /share/envs/qrnn3d
+</code></pre></div><blockquote class="book-hint warning">
+<p>为方便大家使用，<code>/share/env</code> 里的环境没有设置权限。因此</p>
+<ol>
+<li>大家可以进行 <code>pip install</code> 操作，<strong>禁止</strong> <code>uninstall</code> 和 <code>upgrade</code> 。</li>
+<li>但是，<code>conda install</code> 是<strong>不允许</strong>的。（主要考虑是容易破坏包的版本依赖）</li>
+</ol>
+</blockquote>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
@@ -123,7 +175,12 @@ Introduction
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#introduction>Introduction</a></li>
+<li><a href=#公共资源>公共资源</a>
+<ul>
+<li><a href=#存放位置>存放位置</a></li>
+<li><a href=#使用方法>使用方法</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
