@@ -25,3 +25,7 @@ kitty
 
 - [kitty](https://sw.kovidgoyal.net/kitty/)
 - [viu](https://github.com/atanunq/viu)
+
+
+- https://github.com/danielbisar/settings/blob/main/guides/kitty-on-windows-with-wsl2.md
+- https://github.com/kovidgoyal/kitty/issues/640
