@@ -33,6 +33,7 @@ Linux 常用命令
 du -sh path # 查看文件大小
 ls -sh # 查看文件夹下的文件,并显示大小
 df -h # 查看磁盘占用空间
+ps -f -p pid # 查看进程是谁运行的
 ```
 
 
@@ -42,7 +43,6 @@ df -h # 查看磁盘占用空间
 - [常用软件使用指南](https://laizeqiang.notion.site/Software-f61bbdd56c324639900872ed175b214f)
 - [机器学习基础知识](https://laizeqiang.notion.site/Cheatsheet-2ac821b162fa4196986f368d39953474)
 - [torchlight](https://github.com/Zeqiang-Lai/torchlight)
-
 
 ## Contribution
 
