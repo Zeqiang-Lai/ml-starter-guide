@@ -13,6 +13,7 @@
 - [x] 1080p 字体优化  @2022-6-22 ~ @2022-6-22
     - https://github.com/lxgw/LxgwWenKai
     - https://github.com/chawyehsu/lxgw-wenkai-webfont
-- [x] 访问量统计
-- [ ] hugo 教程
+- [x] 访问量统计 @2022-6-22 ~ @2022-6-25
+- [ ] 评论区 @2022-6-25
+- [ ] hugo 教程 
 - [ ] Contributor Guide
