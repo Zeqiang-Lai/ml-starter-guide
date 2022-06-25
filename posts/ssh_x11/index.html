@@ -2,13 +2,15 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content>
+<meta name=description content="通过本教程，你将可以在本地机器显示远程机器上运行 plt.show() 显示的窗口。">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="博客">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/posts/">
-<title>博客 | 深度学习新手村</title>
+<meta name=color-scheme content="light dark"><meta property="og:title" content="SSH远程显示Matplotlib等图形界面">
+<meta property="og:description" content="通过本教程，你将可以在本地机器显示远程机器上运行 plt.show() 显示的窗口。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/posts/ssh_x11/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-06-25T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-06-25T00:00:00+00:00">
+<title>SSH远程显示Matplotlib等图形界面 | 深度学习新手村</title>
 <link rel=manifest href=/ml-starter-guide/manifest.json>
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.2cef1312859545c960227faeae13b9a055bf604383cf2dc0f4e615bb0f7e9fe5.css integrity="sha256-LO8TEoWVRclgIn+urhO5oFW/YEODzy3A9OYVuw9+n+U=" crossorigin=anonymous>
@@ -17,8 +19,8 @@
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
-<link rel=alternate type=application/rss+xml href=https://zeqiang-lai.github.io/ml-starter-guide/posts/index.xml title=深度学习新手村>
 <style type=text/css media=screen>@media(prefers-color-scheme:dark){.chroma{color:#f8f8f2;background-color:#272822}.chroma .x{}.chroma .err{color:#960050;background-color:#1e0010}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#66d9ef}.chroma .kc{color:#66d9ef}.chroma .kd{color:#66d9ef}.chroma .kn{color:#f92672}.chroma .kp{color:#66d9ef}.chroma .kr{color:#66d9ef}.chroma .kt{color:#66d9ef}.chroma .n{}.chroma .na{color:#a6e22e}.chroma .nb{}.chroma .bp{}.chroma .nc{color:#a6e22e}.chroma .no{color:#66d9ef}.chroma .nd{color:#a6e22e}.chroma .ni{}.chroma .ne{color:#a6e22e}.chroma .nf{color:#a6e22e}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{color:#a6e22e}.chroma .py{}.chroma .nt{color:#f92672}.chroma .nv{}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{color:#ae81ff}.chroma .ld{color:#e6db74}.chroma .s{color:#e6db74}.chroma .sa{color:#e6db74}.chroma .sb{color:#e6db74}.chroma .sc{color:#e6db74}.chroma .dl{color:#e6db74}.chroma .sd{color:#e6db74}.chroma .s2{color:#e6db74}.chroma .se{color:#ae81ff}.chroma .sh{color:#e6db74}.chroma .si{color:#e6db74}.chroma .sx{color:#e6db74}.chroma .sr{color:#e6db74}.chroma .s1{color:#e6db74}.chroma .ss{color:#e6db74}.chroma .m{color:#ae81ff}.chroma .mb{color:#ae81ff}.chroma .mf{color:#ae81ff}.chroma .mh{color:#ae81ff}.chroma .mi{color:#ae81ff}.chroma .il{color:#ae81ff}.chroma .mo{color:#ae81ff}.chroma .o{color:#f92672}.chroma .ow{color:#f92672}.chroma .p{}.chroma .c{color:#75715e}.chroma .ch{color:#75715e}.chroma .cm{color:#75715e}.chroma .c1{color:#75715e}.chroma .cs{color:#75715e}.chroma .cp{color:#75715e}.chroma .cpf{color:#75715e}.chroma .g{}.chroma .gd{color:#f92672}.chroma .ge{font-style:italic}.chroma .gr{}.chroma .gh{}.chroma .gi{color:#a6e22e}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#75715e}.chroma .gt{}.chroma .gl{}.chroma .w{}}@media(prefers-color-scheme:light){.chroma{background-color:#f8f8f8}.chroma .x{}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#a2f;font-weight:700}.chroma .kc{color:#a2f;font-weight:700}.chroma .kd{color:#a2f;font-weight:700}.chroma .kn{color:#a2f;font-weight:700}.chroma .kp{color:#a2f}.chroma .kr{color:#a2f;font-weight:700}.chroma .kt{color:#0b0;font-weight:700}.chroma .n{}.chroma .na{color:#b44}.chroma .nb{color:#a2f}.chroma .bp{}.chroma .nc{color:#00f}.chroma .no{color:#800}.chroma .nd{color:#a2f}.chroma .ni{color:#999;font-weight:700}.chroma .ne{color:#d2413a;font-weight:700}.chroma .nf{color:#00a000}.chroma .fm{}.chroma .nl{color:#a0a000}.chroma .nn{color:#00f;font-weight:700}.chroma .nx{}.chroma .py{}.chroma .nt{color:green;font-weight:700}.chroma .nv{color:#b8860b}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#b44}.chroma .sa{color:#b44}.chroma .sb{color:#b44}.chroma .sc{color:#b44}.chroma .dl{color:#b44}.chroma .sd{color:#b44;font-style:italic}.chroma .s2{color:#b44}.chroma .se{color:#b62;font-weight:700}.chroma .sh{color:#b44}.chroma .si{color:#b68;font-weight:700}.chroma .sx{color:green}.chroma .sr{color:#b68}.chroma .s1{color:#b44}.chroma .ss{color:#b8860b}.chroma .m{color:#666}.chroma .mb{color:#666}.chroma .mf{color:#666}.chroma .mh{color:#666}.chroma .mi{color:#666}.chroma .il{color:#666}.chroma .mo{color:#666}.chroma .o{color:#666}.chroma .ow{color:#a2f;font-weight:700}.chroma .p{}.chroma .c{color:#080;font-style:italic}.chroma .ch{color:#080;font-style:italic}.chroma .cm{color:#080;font-style:italic}.chroma .c1{color:#080;font-style:italic}.chroma .cs{color:#080;font-weight:700}.chroma .cp{color:#080}.chroma .cpf{color:#080}.chroma .g{}.chroma .gd{color:#a00000}.chroma .ge{font-style:italic}.chroma .gr{color:red}.chroma .gh{color:navy;font-weight:700}.chroma .gi{color:#00a000}.chroma .go{color:#888}.chroma .gp{color:navy;font-weight:700}.chroma .gs{font-weight:700}.chroma .gu{color:purple;font-weight:700}.chroma .gt{color:#04d}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}}</style>
+<link rel=stylesheet href=/ml-starter-guide/css/clipboard.min.456f496a8e4e3c17a4539bc11c924c0037787518515ecb6f11c7740c76a2ffcd.css>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -97,112 +99,114 @@ Github
 <label for=menu-control>
 <img src=/ml-starter-guide/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>博客</strong>
+<strong>SSH远程显示Matplotlib等图形界面</strong>
 <label for=toc-control>
 <img src=/ml-starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav>
+<nav id=TableOfContents>
 <ul>
-<li class=book-section-flat>
-<strong>Categories</strong>
+<li>
 <ul>
-<li class="flex justify-between">
-<a href=/ml-starter-guide/categories/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/>命令行相关</a>
-<span>1</span>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<strong>Tags</strong>
-<ul>
+<li><a href=#效果>效果</a></li>
+<li><a href=#1-安装软件>1. 安装软件</a></li>
+<li><a href=#2-vscode-配置>2. VSCode 配置</a></li>
+<li><a href=#3-配置sshconfig>3. 配置<code>~/.ssh/config</code></a></li>
+<li><a href=#4-测试>4. 测试</a></li>
 </ul>
 </li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class="markdown book-post">
-<h2>
-<a href=/ml-starter-guide/posts/git/>Git 教程</a>
-</h2>
-<h5>
-<span> 村民1号 </span>
-|
-<span>June 25, 2022</span>
-</h5>
-<div>
-<a href=/ml-starter-guide/categories/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/>命令行相关</a>
-</div>
-<p><p>Git 是用来版本管理的利器，利用它我们可以清楚的记录代码的改动情况，并且可以快速的恢复到任意时刻的版本。</p>
-</p>
-</article>
-<article class="markdown book-post">
-<h2>
-<a href=/ml-starter-guide/posts/ssh/>SSH 免密登陆</a>
-</h2>
-<h5>
-<span> 村民1号 </span>
-|
-<span>June 25, 2022</span>
-</h5>
-<p><p>本文将介绍如何在 Windows 和 macOS 系统配置 SSH 免密登陆。</p>
-<a href=/ml-starter-guide/posts/ssh/>...</a>
-</p>
-</article>
-<article class="markdown book-post">
-<h2>
+<article class=markdown>
+<h1>
 <a href=/ml-starter-guide/posts/ssh_x11/>SSH远程显示Matplotlib等图形界面</a>
-</h2>
+</h1>
 <h5>
 <span> 村民1号 </span>
 |
 <span>June 25, 2022</span>
 </h5>
-<p><p>通过本教程，你将可以在本地机器显示远程机器上运行 <code>plt.show()</code> 显示的窗口。</p>
-<a href=/ml-starter-guide/posts/ssh_x11/>...</a>
-</p>
-</article>
-<article class="markdown book-post">
-<h2>
-<a href=/ml-starter-guide/posts/conda/>Conda 简易教程</a>
+<p>通过本教程，你将可以在本地机器显示远程机器上运行 <code>plt.show()</code> 显示的窗口。</p>
+<h2 id=效果>
+效果
+<a class=anchor href=#%e6%95%88%e6%9e%9c>#</a>
 </h2>
-<h5>
-<span> 村民1号 </span>
-|
-<span>June 20, 2022</span>
-</h5>
+<ul>
+<li>VSCode</li>
+</ul>
 <p>
-<a href=/ml-starter-guide/posts/conda/>...</a>
-</p>
-</article>
-<article class="markdown book-post">
-<h2>
-<a href=/ml-starter-guide/posts/tmux/>Tmux 简易教程</a>
+<img src=demo.gif alt=demo.gif></p>
+<ul>
+<li>命令行需要额外操作：
+<ul>
+<li>macos 需要给SSH加 <code>-X</code> 参数（大写X），例如 <code>ssh -X user@10.10.10.8</code></li>
+<li>windows下需要用支持x11 forward的terminal，比如xshell，tabby terminal，在profile里找到x11 forward勾上，例如tabby：</li>
+</ul>
+</li>
+</ul>
+<p>
+<img src=tabby.png alt=tabby></p>
+<p>
+<img src=2.gif alt=2.gif></p>
+<p>其他GUI软件也是可以显示的，比如 <code>gedit</code> , <code>pycharm</code> 等</p>
+<p>
+<img src=3.gif alt=3.gif></p>
+<h2 id=1-安装软件>
+1. 安装软件
+<a class=anchor href=#1-%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6>#</a>
 </h2>
-<h5>
-<span> 🍉 </span>
-|
-<span>June 20, 2022</span>
-</h5>
-<p><p>如果你希望关闭终端窗口再打开，会话并不终止，而是继续运行之前的程序，你可以试试 tmux 。</p>
-<a href=/ml-starter-guide/posts/tmux/>...</a>
-</p>
-</article>
-<article class="markdown book-post">
-<h2>
-<a href=/ml-starter-guide/posts/better_shell/>如何配置趁手的命令行环境</a>
+<div class=book-tabs><input type=radio class=toggle name=tabs-uniqueid id=tabs-uniqueid-0 checked>
+<label for=tabs-uniqueid-0>macOS</label>
+<div class="book-tabs-content markdown-inner"><ul>
+<li>安装xquartz , 地址
+<a href=https://www.xquartz.org/>https://www.xquartz.org/</a></li>
+</ul>
+</div><input type=radio class=toggle name=tabs-uniqueid id=tabs-uniqueid-1>
+<label for=tabs-uniqueid-1>Windows</label>
+<div class="book-tabs-content markdown-inner"><ul>
+<li>安装Xming, 地址
+<a href=https://sourceforge.net/projects/xming/>https://sourceforge.net/projects/xming/</a></li>
+</ul>
+</div></div>
+<h2 id=2-vscode-配置>
+2. VSCode 配置
+<a class=anchor href=#2-vscode-%e9%85%8d%e7%bd%ae>#</a>
 </h2>
-<h5>
-<span> 村民1号 </span>
-|
-<span>June 20, 2022</span>
-</h5>
-<p><p>如果你的命令行 shell 是 bash，你可以跟随这个教程配置更好用的 zsh 。</p>
-<a href=/ml-starter-guide/posts/better_shell/>...</a>
-</p>
-</article>
+<ul>
+<li>vscode 安装remote x11插件
+<ul>
+<li>本地装Remote x11 ssh</li>
+<li>远程装Remote x11</li>
+</ul>
+</li>
+</ul>
+<p>
+<img src=x11.png alt=Untitled></p>
+<p>
+<img src=x11-2.png alt=Untitled></p>
+<h2 id=3-配置sshconfig>
+3. 配置<code>~/.ssh/config</code>
+<a class=anchor href=#3-%e9%85%8d%e7%bd%aesshconfig>#</a>
+</h2>
+<p>
+<img src=ssh.png alt=Untitled></p>
+<ul>
+<li>改<code>~/.ssh/config</code>，在你要远程的Host添加 <code>ForwardX11 yes</code></li>
+</ul>
+<pre tabindex=0><code class=language-config data-lang=config>Host 3090-Local
+  HostName 10.108.10.37
+  User laizeqiang
+  ForwardX11 yes
+</code></pre><h2 id=4-测试>
+4. 测试
+<a class=anchor href=#4-%e6%b5%8b%e8%af%95>#</a>
+</h2>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>matplotlib.pyplot</span> <span class=k>as</span> <span class=nn>plt</span><span class=p>;</span> <span class=kn>import</span> <span class=nn>numpy</span> <span class=k>as</span> <span class=nn>np</span><span class=p>;</span> <span class=n>img</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>ones</span><span class=p>((</span><span class=mi>10</span><span class=p>,</span><span class=mi>10</span><span class=p>));</span> <span class=n>plt</span><span class=o>.</span><span class=n>imshow</span><span class=p>(</span><span class=n>img</span><span class=p>);</span> <span class=n>plt</span><span class=o>.</span><span class=n>show</span><span class=p>()</span>
+</code></pre></div></article>
+<script src=/ml-starter-guide/js/clipboard.min.d1339707ef2b3804bac2858e9ec2d4a56e8305692fedb18db3a498c0d3736058.js></script>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.1.0/css/all.css integrity=sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt crossorigin=anonymous>
 <footer class=book-footer>
@@ -213,24 +217,21 @@ Github
 <span id=busuanzi_container_page_pv>累计访问:<span id=busuanzi_value_page_pv></span>次</span>
 </div>
 </footer>
+<div class=book-comments>
+</div>
 <label for=menu-control class="hidden book-menu-overlay"></label>
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav>
+<nav id=TableOfContents>
 <ul>
-<li class=book-section-flat>
-<strong>Categories</strong>
+<li>
 <ul>
-<li class="flex justify-between">
-<a href=/ml-starter-guide/categories/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/>命令行相关</a>
-<span>1</span>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<strong>Tags</strong>
-<ul>
+<li><a href=#效果>效果</a></li>
+<li><a href=#1-安装软件>1. 安装软件</a></li>
+<li><a href=#2-vscode-配置>2. VSCode 配置</a></li>
+<li><a href=#3-配置sshconfig>3. 配置<code>~/.ssh/config</code></a></li>
+<li><a href=#4-测试>4. 测试</a></li>
 </ul>
 </li>
 </ul>
