@@ -2,3 +2,5 @@
     {{ $js := resources.Get "js/clipboard.js" | resources.Minify | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}"></script>
 {{ end }}
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+

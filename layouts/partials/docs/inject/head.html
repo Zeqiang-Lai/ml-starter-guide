@@ -12,3 +12,4 @@
   {{ $style := resources.Get "css/clipboard.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ end }}
+
