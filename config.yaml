@@ -1,4 +1,5 @@
 # hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/hugo-book/
+googleAnalytics: "G-FKSXTP92RJ"
 
 baseURL: https://zeqiang-lai.github.io/ml-starter-guide
 title: 深度学习新手村
@@ -18,6 +19,7 @@ markup:
     startLevel: 1
   highlight:
     noclasses: false
+
 
 # Multi-lingual mode config
 # There are different options to translate files

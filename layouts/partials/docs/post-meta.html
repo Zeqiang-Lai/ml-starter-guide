@@ -1,10 +1,12 @@
+<h5>
 {{ with .Author }}
-  <h5> {{ $.Param "author" }} </h5>
+  <span> {{ $.Param "author" }} </span>
 {{ end }}
-
+ |
 {{ with .Date }}
-  <h5>{{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}</h5>
+  <span>{{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}</span>
 {{ end }}
+</h5>
 
 {{ range $taxonomy, $_ := .Site.Taxonomies }}
   {{ with $terms := $.GetTerms $taxonomy }}

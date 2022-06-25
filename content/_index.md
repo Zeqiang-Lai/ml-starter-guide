@@ -11,7 +11,10 @@ type: docs
 2. 常用软件推荐, 各种开发流程优化教程等等。
 
 
-## 常用
+{{< recent_posts >}}
+
+
+## 常用指令
 
 切换 pip 源
 
@@ -44,6 +47,7 @@ ps -f -p pid # 查看进程是谁运行的
 - [机器学习基础知识](https://laizeqiang.notion.site/Cheatsheet-2ac821b162fa4196986f368d39953474)
 - [torchlight](https://github.com/Zeqiang-Lai/torchlight)
 
-## Contribution
+
+## 贡献
 
 - 欢迎贡献文档，欢迎提出意见和建议。

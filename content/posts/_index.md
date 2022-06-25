@@ -3,5 +3,5 @@ menu:
   after:
     name: blog
     weight: 5
-title: 教程
+title: 博客
 ---
