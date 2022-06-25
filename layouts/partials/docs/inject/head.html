@@ -6,3 +6,9 @@
       {{ partial "css/syntax-light.css" . | safeCSS }} 
     }
 </style>
+
+
+{{ if (findRE "<pre" .Content 1) }}
+  {{ $style := resources.Get "css/clipboard.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ end }}

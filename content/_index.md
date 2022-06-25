@@ -14,7 +14,7 @@ type: docs
 {{< recent_posts >}}
 
 
-## 常用
+## 常用指令
 
 切换 pip 源
 
@@ -47,6 +47,6 @@ df -h # 查看磁盘占用空间
 - [torchlight](https://github.com/Zeqiang-Lai/torchlight)
 
 
-## Contribution
+## 贡献
 
 - 欢迎贡献文档，欢迎提出意见和建议。

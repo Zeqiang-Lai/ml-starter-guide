@@ -1,0 +1,4 @@
+{{ if (findRE "<pre" .Content 1) }}
+    {{ $js := resources.Get "js/clipboard.js" | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $js.RelPermalink }}"></script>
+{{ end }}
