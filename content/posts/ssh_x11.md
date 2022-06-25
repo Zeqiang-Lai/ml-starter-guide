@@ -1,7 +1,7 @@
 ---
 author: "村民1号"
 date: 2022-06-25
-title: "SSH远程显示Matplotlib等图形界面"
+title: "SSH 远程显示 Matplotlib 等图形界面"
 ---
 
 通过本教程，你将可以在本地机器显示远程机器上运行 `plt.show()` 显示的窗口。
