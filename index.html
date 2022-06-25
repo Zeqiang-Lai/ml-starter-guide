@@ -4,10 +4,10 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="简介 #  🌟 欢迎来到新手村。
- 这里汇总了实验室服务器相关的各种资源使用方法与教程。 常用软件推荐, 各种开发流程优化教程等等。  最近发布  Conda 简易教程  Tmux 简易教程  博客   常用指令 #  切换 pip 源
+ 这里汇总了实验室服务器相关的各种资源使用方法与教程。 常用软件推荐, 各种开发流程优化教程等等。  最近发布  公共资源  常见问题  数据集   常用指令 #  切换 pip 源
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ 训练
 nvidia-smi export CUDA_VISIBLE_DEVICES=1 source activate /share/envs/qrnn3d Linux 常用命令
-du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示大小 df -h # 查看磁盘占用空间 友情链接 #  来自 村民一号:
+du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示大小 df -h # 查看磁盘占用空间 ps -f -p pid # 查看进程是谁运行的 友情链接 #  来自 村民一号:
   常用软件使用指南  机器学习基础知识  torchlight  贡献 #   欢迎贡献文档，欢迎提出意见和建议。  ">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="Introduction">
@@ -20,7 +20,7 @@ du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示�
 <link rel=alternate hreflang=zh href=https://zeqiang-lai.github.io/ml-starter-guide/en/ title>
 <link rel=stylesheet href=/ml-starter-guide/book.min.2cef1312859545c960227faeae13b9a055bf604383cf2dc0f4e615bb0f7e9fe5.css integrity="sha256-LO8TEoWVRclgIn+urhO5oFW/YEODzy3A9OYVuw9+n+U=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/zh.search.min.2acc37b3dc35e312e43b22bc0b384efdd21ac2ba7778d6548499f69379d2b64a.js integrity="sha256-Ksw3s9w14xLkOyK8CzhO/dIawrp3eNZUhJn2k3nStko=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.d60f1c75ae0be4f9e232225316f1bbb4e57e7cb494b266da0a49067de98a06b4.js integrity="sha256-1g8cda4L5PniMiJTFvG7tOV+fLSUsmbaCkkGfemKBrQ=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
@@ -84,6 +84,9 @@ Maintainer
 <ul>
 </ul>
 </li>
+<li>
+<a href=/ml-starter-guide/docs/recommend/>外部资源</a>
+</li>
 </ul>
 <ul>
 <li>
@@ -137,11 +140,11 @@ Github
 </ol>
 <h2>最近发布</h2>
 <ul>
-<li><a href=/ml-starter-guide/posts/conda/>Conda 简易教程</a>
+<li><a href=/ml-starter-guide/docs/share/>公共资源</a>
 </li>
-<li><a href=/ml-starter-guide/posts/tmux/>Tmux 简易教程</a>
+<li><a href=/ml-starter-guide/docs/faq/>常见问题</a>
 </li>
-<li><a href=/ml-starter-guide/posts/>博客</a>
+<li><a href=/ml-starter-guide/docs/share/dataset/>数据集</a>
 </li>
 </ul>
 <h2 id=常用指令>
@@ -158,6 +161,7 @@ Github
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>du -sh path <span class=c1># 查看文件大小</span>
 ls -sh <span class=c1># 查看文件夹下的文件,并显示大小</span>
 df -h <span class=c1># 查看磁盘占用空间</span>
+ps -f -p pid <span class=c1># 查看进程是谁运行的</span>
 </code></pre></div><h2 id=友情链接>
 友情链接
 <a class=anchor href=#%e5%8f%8b%e6%83%85%e9%93%be%e6%8e%a5>#</a>
