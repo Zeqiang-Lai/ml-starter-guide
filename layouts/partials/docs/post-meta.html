@@ -6,9 +6,7 @@
 {{ with .Date }}
   <span>{{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}</span>
 {{ end }}
- |
-<span id="busuanzi_container_page_pv">总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-</h5>
+
 
 {{ range $taxonomy, $_ := .Site.Taxonomies }}
   {{ with $terms := $.GetTerms $taxonomy }}
