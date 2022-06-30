@@ -1,6 +1,16 @@
 /* You can add custom styles here. */
 
 // @import "plugins/numbered";
+.book-columns {
+  &.flatten-in-mobile {
+      flex-direction: column;
+
+      @media (min-width:56rem) {
+          flex-direction: row;
+      }
+  }
+}
+
 
 .markdown {
   font-size: 14.5px;
