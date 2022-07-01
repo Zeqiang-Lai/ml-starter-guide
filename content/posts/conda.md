@@ -28,6 +28,11 @@ conda env list
 conda create -n your_env_name python=X.X
 ```
 
+如果你想把环境装到别的指定文件夹里, 用 `-p` 而不是 `-n` 然后指定完成路径。
+```shell
+conda create -p full_path python=X.X
+```
+
 - 删除虚拟环境
 
 ```shell
