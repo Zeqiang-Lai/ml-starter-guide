@@ -1,8 +1,9 @@
 {{ $count := .Get "count" | default 3 }}
 <h2>最近发布</h2>
 <ul>
-  {{ range first 3 ( where .Site.Pages "Type" "in" site.Params.mainSections )}}
-      <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+  {{ range first 3 ( where .Site.RegularPages "Type" "in" site.Params.mainSections )}}
+      <li>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
       </li>
   {{ end }}
 </ul>
