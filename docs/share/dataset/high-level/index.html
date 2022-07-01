@@ -2,23 +2,21 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="问题：Visual Studio Code is unable to watch for file changes in this large workspace
- https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc">
+<meta name=description content="High Level #  VOC2012 #  ">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="管理">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/en/docs/manage/">
-<title>管理 | 深度学习新手村</title>
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
+<meta property="og:description" content="High Level #  VOC2012 #  ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/docs/share/dataset/high-level/"><meta property="article:section" content="docs">
+<title>High Level | 深度学习新手村</title>
 <link rel=manifest href=/ml-starter-guide/manifest.json>
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/en.search.min.3b02bf66f33f5f87d425e801766473d77f470a56a1682d7b02ea4802b07c2195.js integrity="sha256-OwK/ZvM/X4fUJegBdmRz139HClahaC17AupIArB8IZU=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.d880029f4418d8a750f88556bff3184f7b00c53dca4c75ce45d9f71a5e348ae5.js integrity="sha256-2IACn0QY2KdQ+IVWv/MYT3sAxT3KTHXORdn3Gl40iuU=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
-<link rel=alternate type=application/rss+xml href=https://zeqiang-lai.github.io/ml-starter-guide/en/docs/manage/index.xml title=深度学习新手村>
 <style type=text/css media=screen>@media(prefers-color-scheme:dark){.chroma{color:#f8f8f2;background-color:#272822}.chroma .x{}.chroma .err{color:#960050;background-color:#1e0010}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#66d9ef}.chroma .kc{color:#66d9ef}.chroma .kd{color:#66d9ef}.chroma .kn{color:#f92672}.chroma .kp{color:#66d9ef}.chroma .kr{color:#66d9ef}.chroma .kt{color:#66d9ef}.chroma .n{}.chroma .na{color:#a6e22e}.chroma .nb{}.chroma .bp{}.chroma .nc{color:#a6e22e}.chroma .no{color:#66d9ef}.chroma .nd{color:#a6e22e}.chroma .ni{}.chroma .ne{color:#a6e22e}.chroma .nf{color:#a6e22e}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{color:#a6e22e}.chroma .py{}.chroma .nt{color:#f92672}.chroma .nv{}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{color:#ae81ff}.chroma .ld{color:#e6db74}.chroma .s{color:#e6db74}.chroma .sa{color:#e6db74}.chroma .sb{color:#e6db74}.chroma .sc{color:#e6db74}.chroma .dl{color:#e6db74}.chroma .sd{color:#e6db74}.chroma .s2{color:#e6db74}.chroma .se{color:#ae81ff}.chroma .sh{color:#e6db74}.chroma .si{color:#e6db74}.chroma .sx{color:#e6db74}.chroma .sr{color:#e6db74}.chroma .s1{color:#e6db74}.chroma .ss{color:#e6db74}.chroma .m{color:#ae81ff}.chroma .mb{color:#ae81ff}.chroma .mf{color:#ae81ff}.chroma .mh{color:#ae81ff}.chroma .mi{color:#ae81ff}.chroma .il{color:#ae81ff}.chroma .mo{color:#ae81ff}.chroma .o{color:#f92672}.chroma .ow{color:#f92672}.chroma .p{}.chroma .c{color:#75715e}.chroma .ch{color:#75715e}.chroma .cm{color:#75715e}.chroma .c1{color:#75715e}.chroma .cs{color:#75715e}.chroma .cp{color:#75715e}.chroma .cpf{color:#75715e}.chroma .g{}.chroma .gd{color:#f92672}.chroma .ge{font-style:italic}.chroma .gr{}.chroma .gh{}.chroma .gi{color:#a6e22e}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#75715e}.chroma .gt{}.chroma .gl{}.chroma .w{}}@media(prefers-color-scheme:light){.chroma{background-color:#f8f8f8}.chroma .x{}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#a2f;font-weight:700}.chroma .kc{color:#a2f;font-weight:700}.chroma .kd{color:#a2f;font-weight:700}.chroma .kn{color:#a2f;font-weight:700}.chroma .kp{color:#a2f}.chroma .kr{color:#a2f;font-weight:700}.chroma .kt{color:#0b0;font-weight:700}.chroma .n{}.chroma .na{color:#b44}.chroma .nb{color:#a2f}.chroma .bp{}.chroma .nc{color:#00f}.chroma .no{color:#800}.chroma .nd{color:#a2f}.chroma .ni{color:#999;font-weight:700}.chroma .ne{color:#d2413a;font-weight:700}.chroma .nf{color:#00a000}.chroma .fm{}.chroma .nl{color:#a0a000}.chroma .nn{color:#00f;font-weight:700}.chroma .nx{}.chroma .py{}.chroma .nt{color:green;font-weight:700}.chroma .nv{color:#b8860b}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#b44}.chroma .sa{color:#b44}.chroma .sb{color:#b44}.chroma .sc{color:#b44}.chroma .dl{color:#b44}.chroma .sd{color:#b44;font-style:italic}.chroma .s2{color:#b44}.chroma .se{color:#b62;font-weight:700}.chroma .sh{color:#b44}.chroma .si{color:#b68;font-weight:700}.chroma .sx{color:green}.chroma .sr{color:#b68}.chroma .s1{color:#b44}.chroma .ss{color:#b8860b}.chroma .m{color:#666}.chroma .mb{color:#666}.chroma .mf{color:#666}.chroma .mh{color:#666}.chroma .mi{color:#666}.chroma .il{color:#666}.chroma .mo{color:#666}.chroma .o{color:#666}.chroma .ow{color:#a2f;font-weight:700}.chroma .p{}.chroma .c{color:#080;font-style:italic}.chroma .ch{color:#080;font-style:italic}.chroma .cm{color:#080;font-style:italic}.chroma .c1{color:#080;font-style:italic}.chroma .cs{color:#080;font-weight:700}.chroma .cp{color:#080}.chroma .cpf{color:#080}.chroma .g{}.chroma .gd{color:#a00000}.chroma .ge{font-style:italic}.chroma .gr{color:red}.chroma .gh{color:navy;font-weight:700}.chroma .gi{color:#00a000}.chroma .go{color:#888}.chroma .gp{color:navy;font-weight:700}.chroma .gs{font-weight:700}.chroma .gu{color:purple;font-weight:700}.chroma .gt{color:#04d}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}}</style>
 </head>
 <body dir=ltr>
@@ -29,11 +27,11 @@
 <div class=book-menu-content>
 <nav>
 <h2 class=book-brand>
-<a class="flex align-center" href=/ml-starter-guide/en/><span>深度学习新手村</span>
+<a class="flex align-center" href=/ml-starter-guide/><span>深度学习新手村</span>
 </a>
 </h2>
 <div class=book-search>
-<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/>
 <div class="book-search-spinner hidden"></div>
 <ul id=book-search-results></ul>
 </div>
@@ -43,81 +41,68 @@
 <label for=languages class="flex justify-between">
 <a role=button class="flex align-center">
 <img src=/ml-starter-guide/svg/translate.svg class=book-icon alt=Languages>
-Maintainer
-</a>
-</label>
-<ul>
-<li>
-<a href=https://zeqiang-lai.github.io/ml-starter-guide/>
 User
 </a>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<input type=checkbox id=section-0be0756574cb9f9491186ba11533a32f class=toggle checked>
-<label for=section-0be0756574cb9f9491186ba11533a32f class="flex justify-between">
-<a href=/ml-starter-guide/en/docs/manage/ class=active>管理</a>
 </label>
 <ul>
 <li>
-<a href=/ml-starter-guide/en/docs/manage/conda/>Conda</a>
+<a href=https://zeqiang-lai.github.io/ml-starter-guide/en/>
+Maintainer
+</a>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class=book-section-flat>
+<a href=/ml-starter-guide/docs/share/>公共资源</a>
+<ul>
 <li>
-<input type=checkbox id=section-ed3fb2d7216f2f2551873eda5d5f109e class=toggle>
-<label for=section-ed3fb2d7216f2f2551873eda5d5f109e class="flex justify-between">
-<a href=/ml-starter-guide/en/docs/writing/>文档撰写</a>
+<input type=checkbox id=section-32337003e18f118a42d9d1022190d7e0 class=toggle checked>
+<label for=section-32337003e18f118a42d9d1022190d7e0 class="flex justify-between">
+<a href=/ml-starter-guide/docs/share/dataset/>数据集</a>
 </label>
 <ul>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/buttons/>Buttons</a>
+<a href=/ml-starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/columns/>Columns</a>
+<a href=/ml-starter-guide/docs/share/dataset/high-level/ class=active>High Level</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/details/>Details</a>
+<a href=/ml-starter-guide/docs/share/dataset/other/>Other</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/expand/>Expand</a>
+<a href=/ml-starter-guide/docs/share/dataset/restoration/>Restoration</a>
+</li>
+</ul>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/hints/>Hints</a>
+<a href=/ml-starter-guide/docs/share/software/>软件</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/katex/>Katex</a>
+<a href=/ml-starter-guide/docs/share/env/>Conda环境</a>
 </li>
-<li>
-<a href=/ml-starter-guide/en/docs/writing/mermaid/>Mermaid</a>
+</ul>
 </li>
-<li>
-<input type=checkbox id=section-fcbd9483b5e2e70c540078a17edfb0b1 class=toggle>
-<label for=section-fcbd9483b5e2e70c540078a17edfb0b1 class="flex justify-between">
-<a href=/ml-starter-guide/en/docs/writing/section/>Section</a>
-</label>
+<li class=book-section-flat>
+<a href=/ml-starter-guide/docs/faq/>常见问题</a>
 <ul>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/section/first-page/>First Page</a>
-</li>
-<li>
-<a href=/ml-starter-guide/en/docs/writing/section/second-page/>Second Page</a>
+<a href=/ml-starter-guide/docs/faq/feedback/>反馈</a>
 </li>
 </ul>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/tabs/>Tabs</a>
-</li>
-</ul>
-</li>
-<li>
-<a href=/ml-starter-guide/en/docs/contributor/>Contributor</a>
+<a href=/ml-starter-guide/docs/recommend/>外部资源</a>
 </li>
 </ul>
 <ul>
+<li>
+<a href=/ml-starter-guide/posts/>
+博客
+</a>
+</li>
 <li>
 <a href=https://github.com/Zeqiang-Lai/ml-starter-guide target=_blank rel=noopener>
 Github
@@ -134,18 +119,35 @@ Github
 <label for=menu-control>
 <img src=/ml-starter-guide/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>管理</strong>
+<strong>High Level</strong>
 <label for=toc-control>
 <img src=/ml-starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#high-level>High Level</a>
+<ul>
+<li><a href=#voc2012>VOC2012</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 </aside>
 </header>
-<article class=markdown><p>问题：Visual Studio Code is unable to watch for file changes in this large workspace</p>
-<p>
-<a href=https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc>https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc</a></p>
+<article class=markdown><h2 id=high-level>
+High Level
+<a class=anchor href=#high-level>#</a>
+</h2>
+<h3 id=voc2012>
+VOC2012
+<a class=anchor href=#voc2012>#</a>
+</h3>
 </article>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.1.0/css/all.css integrity=sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt crossorigin=anonymous>
@@ -161,7 +163,19 @@ Github
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#high-level>High Level</a>
+<ul>
+<li><a href=#voc2012>VOC2012</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
 </aside>
 </main>

@@ -4,10 +4,11 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="简介 #  🌟 欢迎来到新手村。
- 这里汇总了实验室服务器相关的各种资源使用方法与教程。 常用软件推荐, 各种开发流程优化教程等等。  最近发布   Git 教程   SSH 免密登陆   SSH 远程显示 Matplotlib 等图形界面   常用指令 #  切换 pip 源
+ 这里汇总了实验室服务器相关的各种资源使用方法与教程。 常用软件推荐, 各种开发流程优化教程等等。  最近发布   光谱数据集   反馈   软件   常用指令 #  切换 pip 源
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ 训练
 nvidia-smi export CUDA_VISIBLE_DEVICES=1 source activate /share/envs/qrnn3d Linux 常用命令
-du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示大小 df -h # 查看磁盘占用空间 ps -f -p pid # 查看进程是谁运行的 友情链接 #  来自 村民一号:">
+du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示大小 df -h # 查看磁盘占用空间 ps -f -p pid # 查看进程是谁运行的 友情链接 #  来自 村民一号:
+  常用软件使用指南  机器学习基础知识  torchlight  贡献 #   欢迎贡献文档，欢迎提出意见和建议。  ">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="Introduction">
 <meta property="og:description" content>
@@ -17,9 +18,9 @@ du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示�
 <link rel=manifest href=/ml-starter-guide/manifest.json>
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=alternate hreflang=zh href=https://zeqiang-lai.github.io/ml-starter-guide/en/ title>
-<link rel=stylesheet href=/ml-starter-guide/book.min.aa4a56b5c2f325fc68acf2816a3afa7291118c807230140f016f3a8297e8d569.css integrity="sha256-qkpWtcLzJfxorPKBajr6cpERjIByMBQPAW86gpfo1Wk=" crossorigin=anonymous>
+<link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/zh.search.min.60e41c32018ecf1a18c62526fd8dabe9f9af39a45b746f2ecd9dff69d91c76d5.js integrity="sha256-YOQcMgGOzxoYxiUm/Y2r6fmvOaRbdG8uzZ3/adkcdtU=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.d880029f4418d8a750f88556bff3184f7b00c53dca4c75ce45d9f71a5e348ae5.js integrity="sha256-2IACn0QY2KdQ+IVWv/MYT3sAxT3KTHXORdn3Gl40iuU=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
@@ -66,8 +67,23 @@ Maintainer
 <a href=/ml-starter-guide/docs/share/>公共资源</a>
 <ul>
 <li>
+<input type=checkbox id=section-32337003e18f118a42d9d1022190d7e0 class=toggle>
+<label for=section-32337003e18f118a42d9d1022190d7e0 class="flex justify-between">
 <a href=/ml-starter-guide/docs/share/dataset/>数据集</a>
+</label>
 <ul>
+<li>
+<a href=/ml-starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
+</li>
+<li>
+<a href=/ml-starter-guide/docs/share/dataset/high-level/>High Level</a>
+</li>
+<li>
+<a href=/ml-starter-guide/docs/share/dataset/other/>Other</a>
+</li>
+<li>
+<a href=/ml-starter-guide/docs/share/dataset/restoration/>Restoration</a>
+</li>
 </ul>
 </li>
 <li>
@@ -143,13 +159,13 @@ Github
 <h2>最近发布</h2>
 <ul>
 <li>
-<a href=/ml-starter-guide/posts/git/>Git 教程</a>
+<a href=/ml-starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
 </li>
 <li>
-<a href=/ml-starter-guide/posts/ssh/>SSH 免密登陆</a>
+<a href=/ml-starter-guide/docs/faq/feedback/>反馈</a>
 </li>
 <li>
-<a href=/ml-starter-guide/posts/ssh_x11/>SSH 远程显示 Matplotlib 等图形界面</a>
+<a href=/ml-starter-guide/docs/share/software/>软件</a>
 </li>
 </ul>
 <h2 id=常用指令>
