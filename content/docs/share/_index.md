@@ -12,9 +12,13 @@ title: "公共资源"
 
 ## 存放位置
 
-- 数据集: `/share/dataset`
-- Conda环境: `/share/env`
-- 软件: `/share/software`
+| 内容          | 路径            |
+| ------------- | --------------- |
+| 公共数据集    | /share/dataset  |
+| 公共Conda环境 | /share/envs     |
+| 公共软件资源  | /share/software |
+| Cuda,GCC等    | /share/opt      |
+
 
 ## 使用方法
 

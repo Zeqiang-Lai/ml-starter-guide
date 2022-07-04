@@ -39,7 +39,6 @@ df -h # 查看磁盘占用空间
 ps -f -p pid # 查看进程是谁运行的
 ```
 
-
 ## 友情链接
 
 来自[村民一号](https://github.com/Zeqiang-Lai):
