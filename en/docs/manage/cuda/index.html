@@ -3,25 +3,25 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="CUDA 管理 #  此部分内容极其容易引起错误导致训练环境崩溃，请谨慎操作。  目前安装有的共享 Cuda 位于 /share/opt/ ，包含：
-cuda-11.3.1 多版本 CUDA 管理 #  前往 官网 下载需要版本的 Cuda Toolkit。
+cuda-11.3.1 cuda-11.1.0 cuda-10.2 多版本 CUDA 安装 #  前往 官网 下载需要版本的 Cuda Toolkit，实验室服务器是 Ubuntu 18.04。
 选 run_file(local) 这个版本。
- 下载完毕后，运行以下命令：
-sudo sh cuda-9.1.run --silent --toolkit --toolkitpath=/share/opt/cuda-9.1 参数：
+ 下载完毕后，运行以下命令安装：
+sudo sh cuda-x.x.run --silent --toolkit --toolkitpath=/share/opt/cuda-x.x 参数：
  --toolkit: 重要参数！！！，只安装 toolkit，不装显卡驱动。一定要包含这个。 --silent: 静默安装，不会显示过程。 --toolkitpath: 指定安装地址。  多版本 CUDA 切换 #  在 .bashrc 或 .zshrc 中添加以下内容
 大部分情况设置这个应该就够了
 export CUDA_HOME=/share/opt/cuda-11.3.1 如果不行，添加
-export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH export PATH=/share/opt/cuda-11.3.1/bin:$PATH 参考资料 #    https://notesbyair.github.io/blog/cs/2020-05-26-installing-multiple-versions-of-cuda-cudnn/  https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77  ">
+export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH export PATH=/share/opt/cuda-11.3.1/bin:$PATH 参考资料 #    https://notesbyair.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
 <meta property="og:description" content="CUDA 管理 #  此部分内容极其容易引起错误导致训练环境崩溃，请谨慎操作。  目前安装有的共享 Cuda 位于 /share/opt/ ，包含：
-cuda-11.3.1 多版本 CUDA 管理 #  前往 官网 下载需要版本的 Cuda Toolkit。
+cuda-11.3.1 cuda-11.1.0 cuda-10.2 多版本 CUDA 安装 #  前往 官网 下载需要版本的 Cuda Toolkit，实验室服务器是 Ubuntu 18.04。
 选 run_file(local) 这个版本。
- 下载完毕后，运行以下命令：
-sudo sh cuda-9.1.run --silent --toolkit --toolkitpath=/share/opt/cuda-9.1 参数：
+ 下载完毕后，运行以下命令安装：
+sudo sh cuda-x.x.run --silent --toolkit --toolkitpath=/share/opt/cuda-x.x 参数：
  --toolkit: 重要参数！！！，只安装 toolkit，不装显卡驱动。一定要包含这个。 --silent: 静默安装，不会显示过程。 --toolkitpath: 指定安装地址。  多版本 CUDA 切换 #  在 .bashrc 或 .zshrc 中添加以下内容
 大部分情况设置这个应该就够了
 export CUDA_HOME=/share/opt/cuda-11.3.1 如果不行，添加
-export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH export PATH=/share/opt/cuda-11.3.1/bin:$PATH 参考资料 #    https://notesbyair.github.io/blog/cs/2020-05-26-installing-multiple-versions-of-cuda-cudnn/  https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77  ">
+export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH export PATH=/share/opt/cuda-11.3.1/bin:$PATH 参考资料 #    https://notesbyair.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/en/docs/manage/cuda/"><meta property="article:section" content="docs">
 <title>Cuda | 深度学习新手村</title>
@@ -29,7 +29,7 @@ export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH export PATH
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/en.search.min.9733711b9f8275aa48c3cb60b551087ab7c0a7bfca6783fd238337db0489f403.js integrity="sha256-lzNxG5+CdapIw8tgtVEIerfAp7/KZ4P9I4M32wSJ9AM=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/en.search.min.fd59f524ad588416ba4f66950d0a9236ccb1e082539f3433d14f9aa14b892095.js integrity="sha256-/Vn1JK1YhBa6T2aVDQqSNsyx4IJTnzQz0U+aoUuJIJU=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
@@ -71,11 +71,8 @@ User
 </li>
 </ul>
 <ul>
-<li>
-<input type=checkbox id=section-0be0756574cb9f9491186ba11533a32f class=toggle checked>
-<label for=section-0be0756574cb9f9491186ba11533a32f class="flex justify-between">
+<li class=book-section-flat>
 <a href=/ml-starter-guide/en/docs/manage/>管理</a>
-</label>
 <ul>
 <li>
 <a href=/ml-starter-guide/en/docs/manage/conda/>Conda</a>
@@ -162,7 +159,7 @@ Github
 <ul>
 <li><a href=#cuda-管理>CUDA 管理</a>
 <ul>
-<li><a href=#多版本-cuda-管理>多版本 CUDA 管理</a></li>
+<li><a href=#多版本-cuda-安装>多版本 CUDA 安装</a></li>
 <li><a href=#多版本-cuda-切换>多版本 CUDA 切换</a></li>
 <li><a href=#参考资料>参考资料</a></li>
 </ul>
@@ -175,23 +172,25 @@ Github
 CUDA 管理
 <a class=anchor href=#cuda-%e7%ae%a1%e7%90%86>#</a>
 </h1>
-<blockquote class="book-hint warning">
+<blockquote class="book-hint danger">
 此部分内容极其容易引起错误导致训练环境崩溃，请谨慎操作。
 </blockquote>
 <p>目前安装有的共享 Cuda 位于 <code>/share/opt/</code> ，包含：</p>
 <pre tabindex=0><code>cuda-11.3.1
-</code></pre><h2 id=多版本-cuda-管理>
-多版本 CUDA 管理
-<a class=anchor href=#%e5%a4%9a%e7%89%88%e6%9c%ac-cuda-%e7%ae%a1%e7%90%86>#</a>
+cuda-11.1.0
+cuda-10.2
+</code></pre><h2 id=多版本-cuda-安装>
+多版本 CUDA 安装
+<a class=anchor href=#%e5%a4%9a%e7%89%88%e6%9c%ac-cuda-%e5%ae%89%e8%a3%85>#</a>
 </h2>
 <p>前往
-<a href=https://developer.nvidia.com/cuda-toolkit-archive>官网</a> 下载需要版本的 Cuda Toolkit。</p>
+<a href=https://developer.nvidia.com/cuda-toolkit-archive>官网</a> 下载需要版本的 Cuda Toolkit，实验室服务器是 Ubuntu 18.04。</p>
 <p>选 <code>run_file(local)</code> 这个版本。</p>
 <figure><img src=../imgs/cuda.png>
 </figure>
-<p>下载完毕后，运行以下命令：</p>
-<pre tabindex=0><code>sudo sh cuda-9.1.run --silent --toolkit --toolkitpath=/share/opt/cuda-9.1
-</code></pre><p>参数：</p>
+<p>下载完毕后，运行以下命令安装：</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sudo sh cuda-x.x.run --silent --toolkit --toolkitpath<span class=o>=</span>/share/opt/cuda-x.x
+</code></pre></div><p>参数：</p>
 <ul>
 <li><code>--toolkit</code>: <strong>重要参数！！！</strong>，只安装 toolkit，不装显卡驱动。<strong>一定要包含这个</strong>。</li>
 <li><code>--silent</code>: 静默安装，不会显示过程。</li>
@@ -203,11 +202,11 @@ CUDA 管理
 </h2>
 <p>在 <code>.bashrc</code> 或 <code>.zshrc</code> 中添加以下内容</p>
 <p>大部分情况设置这个应该就够了</p>
-<pre tabindex=0><code>export CUDA_HOME=/share/opt/cuda-11.3.1 
-</code></pre><p>如果不行，添加</p>
-<pre tabindex=0><code>export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH
-export PATH=/share/opt/cuda-11.3.1/bin:$PATH
-</code></pre><h2 id=参考资料>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>export</span> <span class=nv>CUDA_HOME</span><span class=o>=</span>/share/opt/cuda-11.3.1 
+</code></pre></div><p>如果不行，添加</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>export</span> <span class=nv>LD_LIBRARY_PATH</span><span class=o>=</span>/share/opt/cuda-11.3.1/lib64:<span class=nv>$LD_LIBRARY_PATH</span>
+<span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span>/share/opt/cuda-11.3.1/bin:<span class=nv>$PATH</span>
+</code></pre></div><h2 id=参考资料>
 参考资料
 <a class=anchor href=#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99>#</a>
 </h2>
@@ -237,7 +236,7 @@ export PATH=/share/opt/cuda-11.3.1/bin:$PATH
 <ul>
 <li><a href=#cuda-管理>CUDA 管理</a>
 <ul>
-<li><a href=#多版本-cuda-管理>多版本 CUDA 管理</a></li>
+<li><a href=#多版本-cuda-安装>多版本 CUDA 安装</a></li>
 <li><a href=#多版本-cuda-切换>多版本 CUDA 切换</a></li>
 <li><a href=#参考资料>参考资料</a></li>
 </ul>
