@@ -2,20 +2,28 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="公用 Conda 环境 #  公共环境列表 #     环境路径 Python版本 PyTorch版本 CUDA版本     /share/envs/qrnn3d 3.6 1.10 11.3    使用方法 #   查看有哪些环境  ls /share/env 激活环境，以 qrnn3d 为例，（如果出错了，你可能需要先安装 conda）  source activate /share/envs/qrnn3d 为方便大家使用，/share/env 里的环境没有设置权限。因此
- 大家可以进行 pip install 操作，禁止 uninstall 和 upgrade 。 但是，conda install 是不允许的。（主要考虑是容易破坏包的版本依赖）   ">
+<meta name=description content="公用 Conda 环境 #  实验室服务器配置有公共的 Conda 环境，大家可以自行 clone 或者直接使用
+公共环境列表 #     环境路径 Python版本 PyTorch版本 CUDA版本     /share/envs/torch1.7 3.6 1.7.1 11.0   /share/envs/torch1.10 3.7 1.10.0 11.3.1    使用方法 #   查看有哪些环境  ls /share/envs clone #  推荐 clone 一份到自己的 home 目录下，这样可以随意更改，不会影响到他人。
+clone 使用的是直接复制，所以无需重新下载大部分内容。（部分内容需要下载是正常的）
+conda create -n [name] --clone [path] 其中 [name] 是你想要的环境名，[path] 是你想要的拷贝的环境路径, 例如 /share/envs/torch1.7。
+详见 Conda教程
+直接使用 #   激活环境，以 torch1.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Conda环境">
-<meta property="og:description" content="公用 Conda 环境 #  公共环境列表 #     环境路径 Python版本 PyTorch版本 CUDA版本     /share/envs/qrnn3d 3.6 1.10 11.3    使用方法 #   查看有哪些环境  ls /share/env 激活环境，以 qrnn3d 为例，（如果出错了，你可能需要先安装 conda）  source activate /share/envs/qrnn3d 为方便大家使用，/share/env 里的环境没有设置权限。因此
- 大家可以进行 pip install 操作，禁止 uninstall 和 upgrade 。 但是，conda install 是不允许的。（主要考虑是容易破坏包的版本依赖）   ">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Conda">
+<meta property="og:description" content="公用 Conda 环境 #  实验室服务器配置有公共的 Conda 环境，大家可以自行 clone 或者直接使用
+公共环境列表 #     环境路径 Python版本 PyTorch版本 CUDA版本     /share/envs/torch1.7 3.6 1.7.1 11.0   /share/envs/torch1.10 3.7 1.10.0 11.3.1    使用方法 #   查看有哪些环境  ls /share/envs clone #  推荐 clone 一份到自己的 home 目录下，这样可以随意更改，不会影响到他人。
+clone 使用的是直接复制，所以无需重新下载大部分内容。（部分内容需要下载是正常的）
+conda create -n [name] --clone [path] 其中 [name] 是你想要的环境名，[path] 是你想要的拷贝的环境路径, 例如 /share/envs/torch1.7。
+详见 Conda教程
+直接使用 #   激活环境，以 torch1.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/docs/share/env/"><meta property="article:section" content="docs">
-<title>Conda环境 | 深度学习新手村</title>
+<title>Conda | 深度学习新手村</title>
 <link rel=manifest href=/ml-starter-guide/manifest.json>
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/zh.search.min.a38ba74583ee0e712ddbc68a4e420b83c50c7230e053199e9c3a2ca80113a9c8.js integrity="sha256-o4unRYPuDnEt28aKTkILg8UMcjDgUxmenDosqAETqcg=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.12dd7a6b52ec10ac53aefbda2995fd5efd8610e7a275005b8f5b854db8ed6233.js integrity="sha256-Et16a1LsEKxTrvvaKZX9Xv2GEOeidQBbj1uFTbjtYjM=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
@@ -84,7 +92,10 @@ Maintainer
 <a href=/ml-starter-guide/docs/share/software/>软件</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/env/ class=active>Conda环境</a>
+<a href=/ml-starter-guide/docs/share/env/ class=active>Conda</a>
+</li>
+<li>
+<a href=/ml-starter-guide/docs/share/cuda/>Cuda</a>
 </li>
 </ul>
 </li>
@@ -122,7 +133,7 @@ Github
 <label for=menu-control>
 <img src=/ml-starter-guide/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Conda环境</strong>
+<strong>Conda</strong>
 <label for=toc-control>
 <img src=/ml-starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
@@ -133,7 +144,12 @@ Github
 <li><a href=#公用-conda-环境>公用 Conda 环境</a>
 <ul>
 <li><a href=#公共环境列表>公共环境列表</a></li>
-<li><a href=#使用方法>使用方法</a></li>
+<li><a href=#使用方法>使用方法</a>
+<ul>
+<li><a href=#clone>clone</a></li>
+<li><a href=#直接使用>直接使用</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -144,6 +160,7 @@ Github
 公用 Conda 环境
 <a class=anchor href=#%e5%85%ac%e7%94%a8-conda-%e7%8e%af%e5%a2%83>#</a>
 </h1>
+<p>实验室服务器配置有公共的 <code>Conda</code> 环境，大家可以自行 <code>clone</code> 或者直接使用</p>
 <h2 id=公共环境列表>
 公共环境列表
 <a class=anchor href=#%e5%85%ac%e5%85%b1%e7%8e%af%e5%a2%83%e5%88%97%e8%a1%a8>#</a>
@@ -159,10 +176,16 @@ Github
 </thead>
 <tbody>
 <tr>
-<td>/share/envs/qrnn3d</td>
+<td>/share/envs/torch1.7</td>
 <td>3.6</td>
-<td>1.10</td>
-<td>11.3</td>
+<td>1.7.1</td>
+<td>11.0</td>
+</tr>
+<tr>
+<td>/share/envs/torch1.10</td>
+<td>3.7</td>
+<td>1.10.0</td>
+<td>11.3.1</td>
 </tr>
 </tbody>
 </table>
@@ -173,13 +196,27 @@ Github
 <ol>
 <li>查看有哪些环境</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ls /share/env
-</code></pre></div><ol start=2>
-<li>激活环境，以 <code>qrnn3d</code> 为例，（如果出错了，你可能需要先安装 <code>conda</code>）</li>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ls /share/envs
+</code></pre></div><h3 id=clone>
+clone
+<a class=anchor href=#clone>#</a>
+</h3>
+<p>推荐 <code>clone</code> 一份到自己的 <code>home</code> 目录下，这样可以随意更改，不会影响到他人。</p>
+<p><code>clone</code> 使用的是直接复制，所以无需重新下载大部分内容。（部分内容需要下载是正常的）</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>conda create -n <span class=o>[</span>name<span class=o>]</span> --clone <span class=o>[</span>path<span class=o>]</span>
+</code></pre></div><p>其中 <code>[name]</code> 是你想要的环境名，<code>[path]</code> 是你想要的拷贝的环境路径, 例如 <code>/share/envs/torch1.7</code>。</p>
+<p>详见
+<a href=/ml-starter-guide/posts/conda/>Conda教程</a></p>
+<h3 id=直接使用>
+直接使用
+<a class=anchor href=#%e7%9b%b4%e6%8e%a5%e4%bd%bf%e7%94%a8>#</a>
+</h3>
+<ol>
+<li>激活环境，以 <code>torch1.7</code> 为例</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>source</span> activate /share/envs/qrnn3d
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>conda activate /share/envs/torch1.7
 </code></pre></div><blockquote class="book-hint warning">
-<p>为方便大家使用，<code>/share/env</code> 里的环境没有设置权限。因此</p>
+<p>为方便大家使用，<code>/share/envs</code> 里的环境没有设置权限。因此</p>
 <ol>
 <li>大家可以进行 <code>pip install</code> 操作，<strong>禁止</strong> <code>uninstall</code> 和 <code>upgrade</code> 。</li>
 <li>但是，<code>conda install</code> 是<strong>不允许</strong>的。（主要考虑是容易破坏包的版本依赖）</li>
@@ -206,7 +243,12 @@ Github
 <li><a href=#公用-conda-环境>公用 Conda 环境</a>
 <ul>
 <li><a href=#公共环境列表>公共环境列表</a></li>
-<li><a href=#使用方法>使用方法</a></li>
+<li><a href=#使用方法>使用方法</a>
+<ul>
+<li><a href=#clone>clone</a></li>
+<li><a href=#直接使用>直接使用</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

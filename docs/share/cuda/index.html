@@ -2,23 +2,35 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Section #  Section renders pages in section as definition list, using title and description.
-Example #  {{< section >}}  First Page  First page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+<meta name=description content="Cuda Toolkit #  实验室服务器的共享目录包含数个预先安装好的 Cuda 版本。
+这些共享 Cuda 位于 /share/opt/ ，包含：
+cuda-11.3.1 cuda-11.1.0 cuda-10.2 切换 Cuda 版本 #  注意 ⚠️ ：大部分情况你应该都不用使用这个, Conda 安装的 PyTorch 自带 Toolkit。
+一般来说，只有在你需要编译自定义 Cuda 算子的时候，才可能需要下面的操作，如果你看不懂这里在说什么，那么大概率你不需要以下操作。
+ 在 .bashrc 或 .zshrc 中添加以下内容
+大部分情况设置这个应该就够了
+export CUDA_HOME=/share/opt/cuda-11.3.1 如果不行，添加
+export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH export PATH=/share/opt/cuda-11.3.1/bin:$PATH ">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/en/docs/writing/section/">
-<title>Section | 深度学习新手村</title>
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Cuda">
+<meta property="og:description" content="Cuda Toolkit #  实验室服务器的共享目录包含数个预先安装好的 Cuda 版本。
+这些共享 Cuda 位于 /share/opt/ ，包含：
+cuda-11.3.1 cuda-11.1.0 cuda-10.2 切换 Cuda 版本 #  注意 ⚠️ ：大部分情况你应该都不用使用这个, Conda 安装的 PyTorch 自带 Toolkit。
+一般来说，只有在你需要编译自定义 Cuda 算子的时候，才可能需要下面的操作，如果你看不懂这里在说什么，那么大概率你不需要以下操作。
+ 在 .bashrc 或 .zshrc 中添加以下内容
+大部分情况设置这个应该就够了
+export CUDA_HOME=/share/opt/cuda-11.3.1 如果不行，添加
+export LD_LIBRARY_PATH=/share/opt/cuda-11.3.1/lib64:$LD_LIBRARY_PATH export PATH=/share/opt/cuda-11.3.1/bin:$PATH ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/docs/share/cuda/"><meta property="article:section" content="docs">
+<title>Cuda | 深度学习新手村</title>
 <link rel=manifest href=/ml-starter-guide/manifest.json>
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/en.search.min.1e17935d167f436b1fedbe2e1bc2d0fd87fe43ca7f493076ea749eae2f8afbe5.js integrity="sha256-HheTXRZ/Q2sf7b4uG8LQ/Yf+Q8p/STB26nSeri+K++U=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.12dd7a6b52ec10ac53aefbda2995fd5efd8610e7a275005b8f5b854db8ed6233.js integrity="sha256-Et16a1LsEKxTrvvaKZX9Xv2GEOeidQBbj1uFTbjtYjM=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
-<link rel=alternate type=application/rss+xml href=https://zeqiang-lai.github.io/ml-starter-guide/en/docs/writing/section/index.xml title=深度学习新手村>
 <style type=text/css media=screen>@media(prefers-color-scheme:dark){.chroma{color:#f8f8f2;background-color:#272822}.chroma .x{}.chroma .err{color:#960050;background-color:#1e0010}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#66d9ef}.chroma .kc{color:#66d9ef}.chroma .kd{color:#66d9ef}.chroma .kn{color:#f92672}.chroma .kp{color:#66d9ef}.chroma .kr{color:#66d9ef}.chroma .kt{color:#66d9ef}.chroma .n{}.chroma .na{color:#a6e22e}.chroma .nb{}.chroma .bp{}.chroma .nc{color:#a6e22e}.chroma .no{color:#66d9ef}.chroma .nd{color:#a6e22e}.chroma .ni{}.chroma .ne{color:#a6e22e}.chroma .nf{color:#a6e22e}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{color:#a6e22e}.chroma .py{}.chroma .nt{color:#f92672}.chroma .nv{}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{color:#ae81ff}.chroma .ld{color:#e6db74}.chroma .s{color:#e6db74}.chroma .sa{color:#e6db74}.chroma .sb{color:#e6db74}.chroma .sc{color:#e6db74}.chroma .dl{color:#e6db74}.chroma .sd{color:#e6db74}.chroma .s2{color:#e6db74}.chroma .se{color:#ae81ff}.chroma .sh{color:#e6db74}.chroma .si{color:#e6db74}.chroma .sx{color:#e6db74}.chroma .sr{color:#e6db74}.chroma .s1{color:#e6db74}.chroma .ss{color:#e6db74}.chroma .m{color:#ae81ff}.chroma .mb{color:#ae81ff}.chroma .mf{color:#ae81ff}.chroma .mh{color:#ae81ff}.chroma .mi{color:#ae81ff}.chroma .il{color:#ae81ff}.chroma .mo{color:#ae81ff}.chroma .o{color:#f92672}.chroma .ow{color:#f92672}.chroma .p{}.chroma .c{color:#75715e}.chroma .ch{color:#75715e}.chroma .cm{color:#75715e}.chroma .c1{color:#75715e}.chroma .cs{color:#75715e}.chroma .cp{color:#75715e}.chroma .cpf{color:#75715e}.chroma .g{}.chroma .gd{color:#f92672}.chroma .ge{font-style:italic}.chroma .gr{}.chroma .gh{}.chroma .gi{color:#a6e22e}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#75715e}.chroma .gt{}.chroma .gl{}.chroma .w{}}@media(prefers-color-scheme:light){.chroma{background-color:#f8f8f8}.chroma .x{}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#a2f;font-weight:700}.chroma .kc{color:#a2f;font-weight:700}.chroma .kd{color:#a2f;font-weight:700}.chroma .kn{color:#a2f;font-weight:700}.chroma .kp{color:#a2f}.chroma .kr{color:#a2f;font-weight:700}.chroma .kt{color:#0b0;font-weight:700}.chroma .n{}.chroma .na{color:#b44}.chroma .nb{color:#a2f}.chroma .bp{}.chroma .nc{color:#00f}.chroma .no{color:#800}.chroma .nd{color:#a2f}.chroma .ni{color:#999;font-weight:700}.chroma .ne{color:#d2413a;font-weight:700}.chroma .nf{color:#00a000}.chroma .fm{}.chroma .nl{color:#a0a000}.chroma .nn{color:#00f;font-weight:700}.chroma .nx{}.chroma .py{}.chroma .nt{color:green;font-weight:700}.chroma .nv{color:#b8860b}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#b44}.chroma .sa{color:#b44}.chroma .sb{color:#b44}.chroma .sc{color:#b44}.chroma .dl{color:#b44}.chroma .sd{color:#b44;font-style:italic}.chroma .s2{color:#b44}.chroma .se{color:#b62;font-weight:700}.chroma .sh{color:#b44}.chroma .si{color:#b68;font-weight:700}.chroma .sx{color:green}.chroma .sr{color:#b68}.chroma .s1{color:#b44}.chroma .ss{color:#b8860b}.chroma .m{color:#666}.chroma .mb{color:#666}.chroma .mf{color:#666}.chroma .mh{color:#666}.chroma .mi{color:#666}.chroma .il{color:#666}.chroma .mo{color:#666}.chroma .o{color:#666}.chroma .ow{color:#a2f;font-weight:700}.chroma .p{}.chroma .c{color:#080;font-style:italic}.chroma .ch{color:#080;font-style:italic}.chroma .cm{color:#080;font-style:italic}.chroma .c1{color:#080;font-style:italic}.chroma .cs{color:#080;font-weight:700}.chroma .cp{color:#080}.chroma .cpf{color:#080}.chroma .g{}.chroma .gd{color:#a00000}.chroma .ge{font-style:italic}.chroma .gr{color:red}.chroma .gh{color:navy;font-weight:700}.chroma .gi{color:#00a000}.chroma .go{color:#888}.chroma .gp{color:navy;font-weight:700}.chroma .gs{font-weight:700}.chroma .gu{color:purple;font-weight:700}.chroma .gt{color:#04d}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}}</style>
 <link rel=stylesheet href=/ml-starter-guide/css/clipboard.min.456f496a8e4e3c17a4539bc11c924c0037787518515ecb6f11c7740c76a2ffcd.css>
 </head>
@@ -30,11 +42,11 @@ Example #  {{< section >}}  First Page  First page # Lorem ipsum dolor sit amet,
 <div class=book-menu-content>
 <nav>
 <h2 class=book-brand>
-<a class="flex align-center" href=/ml-starter-guide/en/><span>深度学习新手村</span>
+<a class="flex align-center" href=/ml-starter-guide/><span>深度学习新手村</span>
 </a>
 </h2>
 <div class=book-search>
-<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/>
 <div class="book-search-spinner hidden"></div>
 <ul id=book-search-results></ul>
 </div>
@@ -44,13 +56,13 @@ Example #  {{< section >}}  First Page  First page # Lorem ipsum dolor sit amet,
 <label for=languages class="flex justify-between">
 <a role=button class="flex align-center">
 <img src=/ml-starter-guide/svg/translate.svg class=book-icon alt=Languages>
-Maintainer
+User
 </a>
 </label>
 <ul>
 <li>
-<a href=https://zeqiang-lai.github.io/ml-starter-guide/>
-User
+<a href=https://zeqiang-lai.github.io/ml-starter-guide/en/>
+Maintainer
 </a>
 </li>
 </ul>
@@ -58,67 +70,57 @@ User
 </ul>
 <ul>
 <li class=book-section-flat>
-<a href=/ml-starter-guide/en/docs/manage/>管理</a>
+<a href=/ml-starter-guide/docs/share/>公共资源</a>
 <ul>
 <li>
-<a href=/ml-starter-guide/en/docs/manage/conda/>Conda</a>
-</li>
-<li>
-<a href=/ml-starter-guide/en/docs/manage/cuda/>Cuda</a>
-</li>
-</ul>
-</li>
-<li>
-<input type=checkbox id=section-ed3fb2d7216f2f2551873eda5d5f109e class=toggle checked>
-<label for=section-ed3fb2d7216f2f2551873eda5d5f109e class="flex justify-between">
-<a href=/ml-starter-guide/en/docs/writing/>文档撰写</a>
+<input type=checkbox id=section-32337003e18f118a42d9d1022190d7e0 class=toggle>
+<label for=section-32337003e18f118a42d9d1022190d7e0 class="flex justify-between">
+<a href=/ml-starter-guide/docs/share/dataset/>数据集</a>
 </label>
 <ul>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/buttons/>Buttons</a>
+<a href=/ml-starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/columns/>Columns</a>
+<a href=/ml-starter-guide/docs/share/dataset/high-level/>High Level</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/details/>Details</a>
+<a href=/ml-starter-guide/docs/share/dataset/other/>Other</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/expand/>Expand</a>
+<a href=/ml-starter-guide/docs/share/dataset/restoration/>Restoration</a>
+</li>
+</ul>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/hints/>Hints</a>
+<a href=/ml-starter-guide/docs/share/software/>软件</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/katex/>Katex</a>
+<a href=/ml-starter-guide/docs/share/env/>Conda</a>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/mermaid/>Mermaid</a>
+<a href=/ml-starter-guide/docs/share/cuda/ class=active>Cuda</a>
 </li>
-<li>
-<input type=checkbox id=section-fcbd9483b5e2e70c540078a17edfb0b1 class=toggle checked>
-<label for=section-fcbd9483b5e2e70c540078a17edfb0b1 class="flex justify-between">
-<a href=/ml-starter-guide/en/docs/writing/section/ class=active>Section</a>
-</label>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=/ml-starter-guide/docs/faq/>常见问题</a>
 <ul>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/section/first-page/>First Page</a>
-</li>
-<li>
-<a href=/ml-starter-guide/en/docs/writing/section/second-page/>Second Page</a>
+<a href=/ml-starter-guide/docs/faq/feedback/>反馈</a>
 </li>
 </ul>
 </li>
 <li>
-<a href=/ml-starter-guide/en/docs/writing/tabs/>Tabs</a>
-</li>
-</ul>
-</li>
-<li>
-<a href=/ml-starter-guide/en/docs/contributor/>Contributor</a>
+<a href=/ml-starter-guide/docs/recommend/>外部资源</a>
 </li>
 </ul>
 <ul>
+<li>
+<a href=/ml-starter-guide/posts/>
+博客
+</a>
+</li>
 <li>
 <a href=https://github.com/Zeqiang-Lai/ml-starter-guide target=_blank rel=noopener>
 Github
@@ -135,7 +137,7 @@ Github
 <label for=menu-control>
 <img src=/ml-starter-guide/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Section</strong>
+<strong>Cuda</strong>
 <label for=toc-control>
 <img src=/ml-starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
@@ -143,42 +145,39 @@ Github
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#section>Section</a>
+<li><a href=#cuda-toolkit>Cuda Toolkit</a>
 <ul>
-<li><a href=#example>Example</a></li>
+<li><a href=#切换-cuda-版本>切换 Cuda 版本</a></li>
 </ul>
 </li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class=markdown><h1 id=section>
-Section
-<a class=anchor href=#section>#</a>
+<article class=markdown><h1 id=cuda-toolkit>
+Cuda Toolkit
+<a class=anchor href=#cuda-toolkit>#</a>
 </h1>
-<p>Section renders pages in section as definition list, using title and description.</p>
-<h2 id=example>
-Example
-<a class=anchor href=#example>#</a>
+<p>实验室服务器的共享目录包含数个预先安装好的 <code>Cuda</code> 版本。</p>
+<p>这些共享 Cuda 位于 <code>/share/opt/</code> ，包含：</p>
+<pre tabindex=0><code>cuda-11.3.1
+cuda-11.1.0
+cuda-10.2
+</code></pre><h2 id=切换-cuda-版本>
+切换 Cuda 版本
+<a class=anchor href=#%e5%88%87%e6%8d%a2-cuda-%e7%89%88%e6%9c%ac>#</a>
 </h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-tpl data-lang=tpl><span class=cp>{{</span><span class=o>&lt;</span> <span class=na>section</span> <span class=o>&gt;</span><span class=cp>}}</span><span class=x>
-</span></code></pre></div><dl>
-<dt>
-<a href=/ml-starter-guide/en/docs/writing/section/first-page/>First Page</a>
-</dt>
-<dd class=markdown-inner>
-First page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</dd>
-<dt>
-<a href=/ml-starter-guide/en/docs/writing/section/second-page/>Second Page</a>
-</dt>
-<dd class=markdown-inner>
-Second Page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</dd>
-</dl>
-</article>
+<blockquote class="book-hint warning">
+<p><strong>注意</strong> ⚠️ ：大部分情况你应该都不用使用这个, Conda 安装的 PyTorch 自带 Toolkit。</p>
+<p>一般来说，只有在你需要编译自定义 Cuda 算子的时候，才可能需要下面的操作，如果你看不懂这里在说什么，那么大概率你不需要以下操作。</p>
+</blockquote>
+<p>在 <code>.bashrc</code> 或 <code>.zshrc</code> 中添加以下内容</p>
+<p>大部分情况设置这个应该就够了</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>export</span> <span class=nv>CUDA_HOME</span><span class=o>=</span>/share/opt/cuda-11.3.1 
+</code></pre></div><p>如果不行，添加</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>export</span> <span class=nv>LD_LIBRARY_PATH</span><span class=o>=</span>/share/opt/cuda-11.3.1/lib64:<span class=nv>$LD_LIBRARY_PATH</span>
+<span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span>/share/opt/cuda-11.3.1/bin:<span class=nv>$PATH</span>
+</code></pre></div></article>
 <script src=/ml-starter-guide/js/clipboard.min.d1339707ef2b3804bac2858e9ec2d4a56e8305692fedb18db3a498c0d3736058.js></script>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.1.0/css/all.css integrity=sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt crossorigin=anonymous>
@@ -196,9 +195,9 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#section>Section</a>
+<li><a href=#cuda-toolkit>Cuda Toolkit</a>
 <ul>
-<li><a href=#example>Example</a></li>
+<li><a href=#切换-cuda-版本>切换 Cuda 版本</a></li>
 </ul>
 </li>
 </ul>

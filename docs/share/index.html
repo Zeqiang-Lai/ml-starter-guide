@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="公共资源 #  实验室的服务器设置有公共数据集，公共Conda环境，公共软件资源等。
 大家可以按需自行获取使用。
-存放位置 #   数据集: /share/dataset Conda环境: /share/env 软件: /share/software  使用方法 #  数据集
+存放位置 #     内容 路径     公共数据集 /share/dataset   公共Conda环境 /share/envs   公共软件资源 /share/software   Cuda,GCC等 /share/opt    使用方法 #  数据集
  大家可以自行读取，但请不要往/share/dataset写，以及删除东西（虽然你可能根本没有权限）。 使用 torchlight 里的 data.dataset 模块进行读取。（正在实现当中）  Conda环境
  查看有哪些环境  ls /share/env 激活环境，以 qrnn3d 为例，（如果出错了，你可能需要先安装 conda）  source activate /share/envs/qrnn3d 为方便大家使用，/share/env 里的环境没有设置权限。因此
  大家可以进行 pip install 操作，禁止 uninstall 和 upgrade 。 但是，conda install 是不允许的。（主要考虑是容易破坏包的版本依赖）   ">
@@ -18,7 +18,7 @@
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/zh.search.min.a38ba74583ee0e712ddbc68a4e420b83c50c7230e053199e9c3a2ca80113a9c8.js integrity="sha256-o4unRYPuDnEt28aKTkILg8UMcjDgUxmenDosqAETqcg=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.12dd7a6b52ec10ac53aefbda2995fd5efd8610e7a275005b8f5b854db8ed6233.js integrity="sha256-Et16a1LsEKxTrvvaKZX9Xv2GEOeidQBbj1uFTbjtYjM=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
@@ -88,7 +88,10 @@ Maintainer
 <a href=/ml-starter-guide/docs/share/software/>软件</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/env/>Conda环境</a>
+<a href=/ml-starter-guide/docs/share/env/>Conda</a>
+</li>
+<li>
+<a href=/ml-starter-guide/docs/share/cuda/>Cuda</a>
 </li>
 </ul>
 </li>
@@ -154,11 +157,32 @@ Github
 存放位置
 <a class=anchor href=#%e5%ad%98%e6%94%be%e4%bd%8d%e7%bd%ae>#</a>
 </h2>
-<ul>
-<li>数据集: <code>/share/dataset</code></li>
-<li>Conda环境: <code>/share/env</code></li>
-<li>软件: <code>/share/software</code></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>公共数据集</td>
+<td>/share/dataset</td>
+</tr>
+<tr>
+<td>公共Conda环境</td>
+<td>/share/envs</td>
+</tr>
+<tr>
+<td>公共软件资源</td>
+<td>/share/software</td>
+</tr>
+<tr>
+<td>Cuda,GCC等</td>
+<td>/share/opt</td>
+</tr>
+</tbody>
+</table>
 <h2 id=使用方法>
 使用方法
 <a class=anchor href=#%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95>#</a>
