@@ -21,28 +21,65 @@ Tmux 就是一个在我们关闭了终端窗口再打开，会话并不终止，
 
 ## 使用
 
-首先，我们了解一下 **会话** 和 **窗口** 两个概念。
+首先， tmux 里有两个重要的概念：**会话** 和 **窗口**。
 
-以做实验为例，假设我们需要在两个数据集（dataset_A, dataset_B）上跑两个实验（baseline, ours），我们可以开两个**会话**、起名为dataset_A和dataset_B；然后我们在dataset_A中新建两个**窗口**、起名为baseline和ours, 在这两个窗口中分别跑baseline和ours的实验。同样地，在dataset_B这个会话中，我们也新建baseline和ours两个窗口，跑dataset_B下的实验。
+其次，我们要知道：一个会话可以包含多个窗口。也就是说，我们可以新建一个会话，里面放好多窗口，每个窗口里跑不同的实验。
 
-1. 新建会话
+**会话相关指令**
 
-```shell
-tmux                               # 默认从0开始命名
-tmux new -s 会话名 -n 窗口名
-```
+  1. 新建会话
 
-2. 列出全部的会话
-```shell
-tmux ls
-```
+  ```shell        
+  tmux new -s 会话名   # 也可以只输入 tmux, 这个会话会默认从 0 开始命名
+  ```
 
-3. 恢复会话
-```shell
-tmux at -t 会话名
-```
+  2. 退出会话（需要时还可以进来）
 
-4. 删除会话
-```shell
-tmux kill-session -t 会话名
-```
+  ```shell        
+  Ctrl + b + d        # 不是指令哈，是按下键盘上的三个键
+  ```
+
+  3. 列出全部的会话
+  ```shell
+  tmux ls
+  ```
+
+  3. 恢复会话
+  ```shell
+  tmux at -t 会话名
+  ```
+
+  4. 删除会话
+  ```shell
+  tmux kill-session -t 会话名
+  ```
+
+**在一个会话中，窗口相关指令**
+
+  1. 新建窗口
+  ```shell
+  Ctrl + b + c
+  ```
+
+  2. 删除窗口
+  ```shell
+  Ctrl + c      # 先把程序停掉
+  Ctrl + d      # 删除窗口
+  ```
+
+  3. 重命名窗口
+  ```shell
+  Ctrl + b + ,
+  ```
+
+  4. 切换当前显示的窗口
+  ```shell
+  Ctrl + b + p  # 切换到上一窗口
+  Ctrl + b + n  # 切换到下一窗口
+  ```
+
+  5. 默认的 tmux 对鼠标的点击和滑动功能不友好的
+  ```shell
+  Ctrl + b + :  # 回车后再输入下一行的指令
+  set -g mouse on
+  ```
