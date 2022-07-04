@@ -15,7 +15,7 @@
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/zh.search.min.d880029f4418d8a750f88556bff3184f7b00c53dca4c75ce45d9f71a5e348ae5.js integrity="sha256-2IACn0QY2KdQ+IVWv/MYT3sAxT3KTHXORdn3Gl40iuU=" crossorigin=anonymous></script>
+<script defer src=/ml-starter-guide/zh.search.min.a38ba74583ee0e712ddbc68a4e420b83c50c7230e053199e9c3a2ca80113a9c8.js integrity="sha256-o4unRYPuDnEt28aKTkILg8UMcjDgUxmenDosqAETqcg=" crossorigin=anonymous></script>
 <script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
@@ -167,14 +167,18 @@ Github
 使用
 <a class=anchor href=#%e4%bd%bf%e7%94%a8>#</a>
 </h2>
-<p>首先，我们了解一下 <strong>会话</strong> 和 <strong>窗口</strong> 两个概念。</p>
-<p>以做实验为例，假设我们需要在两个数据集（dataset_A, dataset_B）上跑两个实验（baseline, ours），我们可以开两个<strong>会话</strong>、起名为dataset_A和dataset_B；然后我们在dataset_A中新建两个<strong>窗口</strong>、起名为baseline和ours, 在这两个窗口中分别跑baseline和ours的实验。同样地，在dataset_B这个会话中，我们也新建baseline和ours两个窗口，跑dataset_B下的实验。</p>
+<p>首先， tmux 里有两个重要的概念：<strong>会话</strong> 和 <strong>窗口</strong>。</p>
+<p>其次，我们要知道：一个会话可以包含多个窗口。也就是说，我们可以新建一个会话，里面放好多窗口，每个窗口里跑不同的实验。</p>
+<p><strong>会话相关指令</strong></p>
 <ol>
 <li>新建会话</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>tmux                               <span class=c1># 默认从0开始命名</span>
-tmux new -s 会话名 -n 窗口名
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>tmux new -s 会话名   <span class=c1># 也可以只输入 tmux, 这个会话会默认从 0 开始命名</span>
 </code></pre></div><ol start=2>
+<li>退出会话（需要时还可以进来）</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>Ctrl + b + d        <span class=c1># 不是指令哈，是按下键盘上的三个键</span>
+</code></pre></div><ol start=3>
 <li>列出全部的会话</li>
 </ol>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>tmux ls
@@ -186,6 +190,30 @@ tmux new -s 会话名 -n 窗口名
 <li>删除会话</li>
 </ol>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>tmux kill-session -t 会话名
+</code></pre></div><p><strong>在一个会话中，窗口相关指令</strong></p>
+<ol>
+<li>新建窗口</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>Ctrl + b + c
+</code></pre></div><ol start=2>
+<li>删除窗口</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>Ctrl + c      <span class=c1># 先把程序停掉</span>
+Ctrl + d      <span class=c1># 删除窗口</span>
+</code></pre></div><ol start=3>
+<li>重命名窗口</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>Ctrl + b + ,
+</code></pre></div><ol start=4>
+<li>切换当前显示的窗口</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>Ctrl + b + p  <span class=c1># 切换到上一窗口</span>
+Ctrl + b + n  <span class=c1># 切换到下一窗口</span>
+</code></pre></div><ol start=5>
+<li>默认的 tmux 对鼠标的点击和滑动功能不友好的</li>
+</ol>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>Ctrl + b + :  <span class=c1># 回车后再输入下一行的指令</span>
+<span class=nb>set</span> -g mouse on
 </code></pre></div></article>
 <script src=/ml-starter-guide/js/clipboard.min.d1339707ef2b3804bac2858e9ec2d4a56e8305692fedb18db3a498c0d3736058.js></script>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
