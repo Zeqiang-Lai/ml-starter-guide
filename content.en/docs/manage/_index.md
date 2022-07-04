@@ -1,5 +1,5 @@
 ---
-bookCollapseSection: True
+bookFlatSection: True
 title: 管理
 weight: 1
 ---
