@@ -33,13 +33,13 @@ title: "公共资源"
 1. 查看有哪些环境
 
 ```shell
-ls /share/env
+ls /share/envs
 ```
 
-2. 激活环境，以 `qrnn3d` 为例，（如果出错了，你可能需要先安装 `conda`）
+1. 激活环境，以 `torch1.7` 为例,
 
 ```shell
-source activate /share/envs/qrnn3d
+conda activate /share/envs/torch1.7
 ```
 
 {{< hint warning >}}
