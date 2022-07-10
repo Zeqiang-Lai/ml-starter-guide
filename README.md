@@ -1,6 +1,18 @@
 # ML Starter Guide
 
-你需要使用 [0.88](https://github.com/gohugoio/hugo/releases/tag/v0.88.1) 版本的 Hugo，否则会报错。
+```shell
+git clone --recursive https://github.com/Zeqiang-Lai/ml-starter-guide.git
+git submodule update --init --recursive
+```
+
+你需要使用 [0.88](https://github.com/gohugoio/hugo/releases/tag/v0.88.1) **Extened** 版本的 Hugo，否则会报错。
+
+Linux 安装
+
+```shell
+sudo dpkg -i hugo_extended_0.88.1_Linux-64bit.deb
+```
+
 
 实时预览
 
