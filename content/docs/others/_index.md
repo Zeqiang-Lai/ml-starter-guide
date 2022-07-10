@@ -1,7 +1,7 @@
 ---
 weight: 10
 bookFlatSection: true
-title: "常见问题"
+title: "其他"
 ---
 
-# 常见问题
+
