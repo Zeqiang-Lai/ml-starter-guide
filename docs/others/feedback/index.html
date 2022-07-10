@@ -2,15 +2,17 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="如果你的命令行 shell 是 bash，你可以跟随这个教程配置更好用的 zsh 。">
+<meta name=description content="反馈 #  你可以在 Github issue 里提交反馈意见，我们的维护人员会尽量处理。
+你可以提交包括但不限于：
+ 公共数据集请求 公共环境请求 公共软件下载  PS：在下面评论也可以 🙃">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="如何配置趁手的命令行环境">
-<meta property="og:description" content="如果你的命令行 shell 是 bash，你可以跟随这个教程配置更好用的 zsh 。">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="反馈">
+<meta property="og:description" content="反馈 #  你可以在 Github issue 里提交反馈意见，我们的维护人员会尽量处理。
+你可以提交包括但不限于：
+ 公共数据集请求 公共环境请求 公共软件下载  PS：在下面评论也可以 🙃">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/posts/better_shell/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2022-06-20T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-06-20T00:00:00+00:00">
-<title>如何配置趁手的命令行环境 | 深度学习新手村</title>
+<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/docs/others/feedback/"><meta property="article:section" content="docs">
+<title>反馈 | 深度学习新手村</title>
 <link rel=manifest href=/ml-starter-guide/manifest.json>
 <link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
@@ -20,7 +22,6 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
 <style type=text/css media=screen>@media(prefers-color-scheme:dark){.chroma{color:#f8f8f2;background-color:#272822}.chroma .x{}.chroma .err{color:#960050;background-color:#1e0010}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#66d9ef}.chroma .kc{color:#66d9ef}.chroma .kd{color:#66d9ef}.chroma .kn{color:#f92672}.chroma .kp{color:#66d9ef}.chroma .kr{color:#66d9ef}.chroma .kt{color:#66d9ef}.chroma .n{}.chroma .na{color:#a6e22e}.chroma .nb{}.chroma .bp{}.chroma .nc{color:#a6e22e}.chroma .no{color:#66d9ef}.chroma .nd{color:#a6e22e}.chroma .ni{}.chroma .ne{color:#a6e22e}.chroma .nf{color:#a6e22e}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{color:#a6e22e}.chroma .py{}.chroma .nt{color:#f92672}.chroma .nv{}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{color:#ae81ff}.chroma .ld{color:#e6db74}.chroma .s{color:#e6db74}.chroma .sa{color:#e6db74}.chroma .sb{color:#e6db74}.chroma .sc{color:#e6db74}.chroma .dl{color:#e6db74}.chroma .sd{color:#e6db74}.chroma .s2{color:#e6db74}.chroma .se{color:#ae81ff}.chroma .sh{color:#e6db74}.chroma .si{color:#e6db74}.chroma .sx{color:#e6db74}.chroma .sr{color:#e6db74}.chroma .s1{color:#e6db74}.chroma .ss{color:#e6db74}.chroma .m{color:#ae81ff}.chroma .mb{color:#ae81ff}.chroma .mf{color:#ae81ff}.chroma .mh{color:#ae81ff}.chroma .mi{color:#ae81ff}.chroma .il{color:#ae81ff}.chroma .mo{color:#ae81ff}.chroma .o{color:#f92672}.chroma .ow{color:#f92672}.chroma .p{}.chroma .c{color:#75715e}.chroma .ch{color:#75715e}.chroma .cm{color:#75715e}.chroma .c1{color:#75715e}.chroma .cs{color:#75715e}.chroma .cp{color:#75715e}.chroma .cpf{color:#75715e}.chroma .g{}.chroma .gd{color:#f92672}.chroma .ge{font-style:italic}.chroma .gr{}.chroma .gh{}.chroma .gi{color:#a6e22e}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#75715e}.chroma .gt{}.chroma .gl{}.chroma .w{}}@media(prefers-color-scheme:light){.chroma{background-color:#f8f8f8}.chroma .x{}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#a2f;font-weight:700}.chroma .kc{color:#a2f;font-weight:700}.chroma .kd{color:#a2f;font-weight:700}.chroma .kn{color:#a2f;font-weight:700}.chroma .kp{color:#a2f}.chroma .kr{color:#a2f;font-weight:700}.chroma .kt{color:#0b0;font-weight:700}.chroma .n{}.chroma .na{color:#b44}.chroma .nb{color:#a2f}.chroma .bp{}.chroma .nc{color:#00f}.chroma .no{color:#800}.chroma .nd{color:#a2f}.chroma .ni{color:#999;font-weight:700}.chroma .ne{color:#d2413a;font-weight:700}.chroma .nf{color:#00a000}.chroma .fm{}.chroma .nl{color:#a0a000}.chroma .nn{color:#00f;font-weight:700}.chroma .nx{}.chroma .py{}.chroma .nt{color:green;font-weight:700}.chroma .nv{color:#b8860b}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#b44}.chroma .sa{color:#b44}.chroma .sb{color:#b44}.chroma .sc{color:#b44}.chroma .dl{color:#b44}.chroma .sd{color:#b44;font-style:italic}.chroma .s2{color:#b44}.chroma .se{color:#b62;font-weight:700}.chroma .sh{color:#b44}.chroma .si{color:#b68;font-weight:700}.chroma .sx{color:green}.chroma .sr{color:#b68}.chroma .s1{color:#b44}.chroma .ss{color:#b8860b}.chroma .m{color:#666}.chroma .mb{color:#666}.chroma .mf{color:#666}.chroma .mh{color:#666}.chroma .mi{color:#666}.chroma .il{color:#666}.chroma .mo{color:#666}.chroma .o{color:#666}.chroma .ow{color:#a2f;font-weight:700}.chroma .p{}.chroma .c{color:#080;font-style:italic}.chroma .ch{color:#080;font-style:italic}.chroma .cm{color:#080;font-style:italic}.chroma .c1{color:#080;font-style:italic}.chroma .cs{color:#080;font-weight:700}.chroma .cp{color:#080}.chroma .cpf{color:#080}.chroma .g{}.chroma .gd{color:#a00000}.chroma .ge{font-style:italic}.chroma .gr{color:red}.chroma .gh{color:navy;font-weight:700}.chroma .gi{color:#00a000}.chroma .go{color:#888}.chroma .gp{color:navy;font-weight:700}.chroma .gs{font-weight:700}.chroma .gu{color:purple;font-weight:700}.chroma .gt{color:#04d}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}}</style>
-<link rel=stylesheet href=/ml-starter-guide/css/clipboard.min.456f496a8e4e3c17a4539bc11c924c0037787518515ecb6f11c7740c76a2ffcd.css>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -106,7 +107,7 @@ Maintainer
 <span>其他</span>
 <ul>
 <li>
-<a href=/ml-starter-guide/docs/others/feedback/>反馈</a>
+<a href=/ml-starter-guide/docs/others/feedback/ class=active>反馈</a>
 </li>
 <li>
 <a href=/ml-starter-guide/docs/others/open_source/>开源规范</a>
@@ -139,7 +140,7 @@ Github
 <label for=menu-control>
 <img src=/ml-starter-guide/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>如何配置趁手的命令行环境</strong>
+<strong>反馈</strong>
 <label for=toc-control>
 <img src=/ml-starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
@@ -147,86 +148,25 @@ Github
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li>
-<ul>
-<li><a href=#introduction>Introduction</a></li>
-<li><a href=#效果>效果</a></li>
-<li><a href=#方法>方法</a></li>
-<li><a href=#更多阅读>更多阅读</a></li>
-</ul>
-</li>
+<li><a href=#反馈>反馈</a></li>
 </ul>
 </nav>
 </aside>
 </header>
-<article class=markdown>
-<h1>
-<a href=/ml-starter-guide/posts/better_shell/>如何配置趁手的命令行环境</a>
+<article class=markdown><h1 id=反馈>
+反馈
+<a class=anchor href=#%e5%8f%8d%e9%a6%88>#</a>
 </h1>
-<h5>
-<span> 村民1号 </span>
-|
-<span>June 20, 2022</span>
-</h5>
-<p>如果你的命令行 shell 是 bash，你可以跟随这个教程配置更好用的 zsh 。</p>
-<h2 id=introduction>
-Introduction
-<a class=anchor href=#introduction>#</a>
-</h2>
-<p>如何查看自己的 shell 的类型？</p>
-<p>请在命令行键入以下命令</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>echo</span> <span class=nv>$SHELL</span>
-</code></pre></div><h2 id=效果>
-效果
-<a class=anchor href=#%e6%95%88%e6%9e%9c>#</a>
-</h2>
-<p>你的命令行将支持</p>
+<p>你可以在
+<a href=https://github.com/Zeqiang-Lai/ml-starter-guide/issues>Github issue</a> 里提交反馈意见，我们的维护人员会尽量处理。</p>
+<p>你可以提交包括但不限于：</p>
 <ol>
-<li>语法高亮</li>
-<li>git 提示</li>
-<li>自动补全</li>
-<li>更棒的历史记录</li>
-<li>等</li>
+<li>公共数据集请求</li>
+<li>公共环境请求</li>
+<li>公共软件下载</li>
 </ol>
-<p>示意</p>
-<p>
-<img src=example.gif alt=example></p>
-<h2 id=方法>
-方法
-<a class=anchor href=#%e6%96%b9%e6%b3%95>#</a>
-</h2>
-<ol>
-<li>设置默认 shell 为 zsh</li>
-</ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>chsh -s /bin/zsh
-</code></pre></div><ol start=2>
-<li>进入 zsh</li>
-</ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>zsh
-</code></pre></div><p>第一次使用会弹出是否新建配置文件，选 <code>populate .zshrc</code></p>
-<ol start=3>
-<li>配置 <code>oh my zsh</code></li>
-</ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sh -c <span class=s2>&#34;</span><span class=k>$(</span>wget https://gitee.com/Devkings/oh_my_zsh_install/raw/master/install.sh -O -<span class=k>)</span><span class=s2>&#34;</span>
-</code></pre></div><ol start=4>
-<li>配置高亮，自动补全插件</li>
-</ol>
-<p>先执行这两</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>git clone https://gitee.com/han8gui/zsh-autosuggestions.git <span class=si>${</span><span class=nv>ZSH_CUSTOM</span><span class=k>:-</span><span class=p>~/.oh-my-zsh/custom</span><span class=si>}</span>/plugins/zsh-autosuggestions
-git clone https://gitee.com/Annihilater/zsh-syntax-highlighting.git <span class=si>${</span><span class=nv>ZSH_CUSTOM</span><span class=k>:-</span><span class=p>~/.oh-my-zsh/custom</span><span class=si>}</span>/plugins/zsh-syntax-highlighting
-</code></pre></div><p>然后修改配置文件</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>vim ~/.zshrc
-</code></pre></div><p>找到如下这行配置代码，在后面追加插件名</p>
-<pre tabindex=0><code>plugins=(zsh-autosuggestions zsh-syntax-highlighting)
-</code></pre><h2 id=更多阅读>
-更多阅读
-<a class=anchor href=#%e6%9b%b4%e5%a4%9a%e9%98%85%e8%af%bb>#</a>
-</h2>
-<ul>
-<li>
-<a href=https://ohmyz.sh/>oh my zsh</a></li>
-</ul></article>
-<script src=/ml-starter-guide/js/clipboard.min.d1339707ef2b3804bac2858e9ec2d4a56e8305692fedb18db3a498c0d3736058.js></script>
+<p>PS：在下面评论也可以 🙃</p>
+</article>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.1.0/css/all.css integrity=sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt crossorigin=anonymous>
 <footer class=book-footer>
@@ -237,20 +177,14 @@ git clone https://gitee.com/Annihilater/zsh-syntax-highlighting.git <span class=
 <span id=busuanzi_container_page_pv>累计访问:<span id=busuanzi_value_page_pv></span>次</span>
 </div>
 </footer>
+<div class=book-comments><script src=https://utteranc.es/client.js repo=yan-lang/ycc issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div>
 <label for=menu-control class="hidden book-menu-overlay"></label>
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li>
-<ul>
-<li><a href=#introduction>Introduction</a></li>
-<li><a href=#效果>效果</a></li>
-<li><a href=#方法>方法</a></li>
-<li><a href=#更多阅读>更多阅读</a></li>
-</ul>
-</li>
+<li><a href=#反馈>反馈</a></li>
 </ul>
 </nav>
 </div>
