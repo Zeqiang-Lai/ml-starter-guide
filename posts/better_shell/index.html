@@ -7,20 +7,20 @@
 <meta name=color-scheme content="light dark"><meta property="og:title" content="如何配置趁手的命令行环境">
 <meta property="og:description" content="如果你的命令行 shell 是 bash，你可以跟随这个教程配置更好用的 zsh 。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://zeqiang-lai.github.io/ml-starter-guide/posts/better_shell/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://bit-isp.github.io/starter-guide/posts/better_shell/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-06-20T00:00:00+00:00">
 <meta property="article:modified_time" content="2022-06-20T00:00:00+00:00">
 <title>如何配置趁手的命令行环境 | 深度学习新手村</title>
-<link rel=manifest href=/ml-starter-guide/manifest.json>
-<link rel=icon href=/ml-starter-guide/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/ml-starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
-<script defer src=/ml-starter-guide/flexsearch.min.js></script>
-<script defer src=/ml-starter-guide/zh.search.min.dc905f271205b1a7081f468fc22a57c907c85757ce50365a5cb58ba7729cac13.js integrity="sha256-3JBfJxIFsacIH0aPwipXyQfIV1fOUDZaXLWLp3KcrBM=" crossorigin=anonymous></script>
-<script defer src=/ml-starter-guide/sw.min.63199c93eee3bef7fec83464366b3bd4a15ffb1409252dcc6345f3233334958f.js integrity="sha256-Yxmck+7jvvf+yDRkNms71KFf+xQJJS3MY0XzIzM0lY8=" crossorigin=anonymous></script>
+<link rel=manifest href=/starter-guide/manifest.json>
+<link rel=icon href=/starter-guide/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
+<script defer src=/starter-guide/flexsearch.min.js></script>
+<script defer src=/starter-guide/zh.search.min.05e6451b62765472b710a968c4f14c01f497f32a429124c9e55d16f3318f0a45.js integrity="sha256-BeZFG2J2VHK3EKloxPFMAfSX8ypCkSTJ5V0W8zGPCkU=" crossorigin=anonymous></script>
+<script defer src=/starter-guide/sw.min.e80a57b824c4473615f86da4a1e0b6d2b39252a5deace880fd3d6fd91b00f4a6.js integrity="sha256-6ApXuCTERzYV+G2koeC20rOSUqXerOiA/T1v2RsA9KY=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
 <style type=text/css media=screen>@media(prefers-color-scheme:dark){.chroma{color:#f8f8f2;background-color:#272822}.chroma .x{}.chroma .err{color:#960050;background-color:#1e0010}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#66d9ef}.chroma .kc{color:#66d9ef}.chroma .kd{color:#66d9ef}.chroma .kn{color:#f92672}.chroma .kp{color:#66d9ef}.chroma .kr{color:#66d9ef}.chroma .kt{color:#66d9ef}.chroma .n{}.chroma .na{color:#a6e22e}.chroma .nb{}.chroma .bp{}.chroma .nc{color:#a6e22e}.chroma .no{color:#66d9ef}.chroma .nd{color:#a6e22e}.chroma .ni{}.chroma .ne{color:#a6e22e}.chroma .nf{color:#a6e22e}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{color:#a6e22e}.chroma .py{}.chroma .nt{color:#f92672}.chroma .nv{}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{color:#ae81ff}.chroma .ld{color:#e6db74}.chroma .s{color:#e6db74}.chroma .sa{color:#e6db74}.chroma .sb{color:#e6db74}.chroma .sc{color:#e6db74}.chroma .dl{color:#e6db74}.chroma .sd{color:#e6db74}.chroma .s2{color:#e6db74}.chroma .se{color:#ae81ff}.chroma .sh{color:#e6db74}.chroma .si{color:#e6db74}.chroma .sx{color:#e6db74}.chroma .sr{color:#e6db74}.chroma .s1{color:#e6db74}.chroma .ss{color:#e6db74}.chroma .m{color:#ae81ff}.chroma .mb{color:#ae81ff}.chroma .mf{color:#ae81ff}.chroma .mh{color:#ae81ff}.chroma .mi{color:#ae81ff}.chroma .il{color:#ae81ff}.chroma .mo{color:#ae81ff}.chroma .o{color:#f92672}.chroma .ow{color:#f92672}.chroma .p{}.chroma .c{color:#75715e}.chroma .ch{color:#75715e}.chroma .cm{color:#75715e}.chroma .c1{color:#75715e}.chroma .cs{color:#75715e}.chroma .cp{color:#75715e}.chroma .cpf{color:#75715e}.chroma .g{}.chroma .gd{color:#f92672}.chroma .ge{font-style:italic}.chroma .gr{}.chroma .gh{}.chroma .gi{color:#a6e22e}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#75715e}.chroma .gt{}.chroma .gl{}.chroma .w{}}@media(prefers-color-scheme:light){.chroma{background-color:#f8f8f8}.chroma .x{}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#a2f;font-weight:700}.chroma .kc{color:#a2f;font-weight:700}.chroma .kd{color:#a2f;font-weight:700}.chroma .kn{color:#a2f;font-weight:700}.chroma .kp{color:#a2f}.chroma .kr{color:#a2f;font-weight:700}.chroma .kt{color:#0b0;font-weight:700}.chroma .n{}.chroma .na{color:#b44}.chroma .nb{color:#a2f}.chroma .bp{}.chroma .nc{color:#00f}.chroma .no{color:#800}.chroma .nd{color:#a2f}.chroma .ni{color:#999;font-weight:700}.chroma .ne{color:#d2413a;font-weight:700}.chroma .nf{color:#00a000}.chroma .fm{}.chroma .nl{color:#a0a000}.chroma .nn{color:#00f;font-weight:700}.chroma .nx{}.chroma .py{}.chroma .nt{color:green;font-weight:700}.chroma .nv{color:#b8860b}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#b44}.chroma .sa{color:#b44}.chroma .sb{color:#b44}.chroma .sc{color:#b44}.chroma .dl{color:#b44}.chroma .sd{color:#b44;font-style:italic}.chroma .s2{color:#b44}.chroma .se{color:#b62;font-weight:700}.chroma .sh{color:#b44}.chroma .si{color:#b68;font-weight:700}.chroma .sx{color:green}.chroma .sr{color:#b68}.chroma .s1{color:#b44}.chroma .ss{color:#b8860b}.chroma .m{color:#666}.chroma .mb{color:#666}.chroma .mf{color:#666}.chroma .mh{color:#666}.chroma .mi{color:#666}.chroma .il{color:#666}.chroma .mo{color:#666}.chroma .o{color:#666}.chroma .ow{color:#a2f;font-weight:700}.chroma .p{}.chroma .c{color:#080;font-style:italic}.chroma .ch{color:#080;font-style:italic}.chroma .cm{color:#080;font-style:italic}.chroma .c1{color:#080;font-style:italic}.chroma .cs{color:#080;font-weight:700}.chroma .cp{color:#080}.chroma .cpf{color:#080}.chroma .g{}.chroma .gd{color:#a00000}.chroma .ge{font-style:italic}.chroma .gr{color:red}.chroma .gh{color:navy;font-weight:700}.chroma .gi{color:#00a000}.chroma .go{color:#888}.chroma .gp{color:navy;font-weight:700}.chroma .gs{font-weight:700}.chroma .gu{color:purple;font-weight:700}.chroma .gt{color:#04d}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}}</style>
-<link rel=stylesheet href=/ml-starter-guide/css/clipboard.min.456f496a8e4e3c17a4539bc11c924c0037787518515ecb6f11c7740c76a2ffcd.css>
+<link rel=stylesheet href=/starter-guide/css/clipboard.min.456f496a8e4e3c17a4539bc11c924c0037787518515ecb6f11c7740c76a2ffcd.css>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -30,7 +30,7 @@
 <div class=book-menu-content>
 <nav>
 <h2 class=book-brand>
-<a class="flex align-center" href=/ml-starter-guide/><span>深度学习新手村</span>
+<a class="flex align-center" href=/starter-guide/><span>深度学习新手村</span>
 </a>
 </h2>
 <div class=book-search>
@@ -43,13 +43,13 @@
 <input type=checkbox id=languages class=toggle>
 <label for=languages class="flex justify-between">
 <a role=button class="flex align-center">
-<img src=/ml-starter-guide/svg/translate.svg class=book-icon alt=Languages>
+<img src=/starter-guide/svg/translate.svg class=book-icon alt=Languages>
 User
 </a>
 </label>
 <ul>
 <li>
-<a href=https://zeqiang-lai.github.io/ml-starter-guide/en/>
+<a href=https://bit-isp.github.io/starter-guide/en/>
 Maintainer
 </a>
 </li>
@@ -58,36 +58,36 @@ Maintainer
 </ul>
 <ul>
 <li class=book-section-flat>
-<a href=/ml-starter-guide/docs/share/>公共资源</a>
+<a href=/starter-guide/docs/share/>公共资源</a>
 <ul>
 <li>
 <input type=checkbox id=section-32337003e18f118a42d9d1022190d7e0 class=toggle>
 <label for=section-32337003e18f118a42d9d1022190d7e0 class="flex justify-between">
-<a href=/ml-starter-guide/docs/share/dataset/>数据集</a>
+<a href=/starter-guide/docs/share/dataset/>数据集</a>
 </label>
 <ul>
 <li>
-<a href=/ml-starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
+<a href=/starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/dataset/high-level/>High Level</a>
+<a href=/starter-guide/docs/share/dataset/high-level/>High Level</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/dataset/other/>Other</a>
+<a href=/starter-guide/docs/share/dataset/other/>Other</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/dataset/restoration/>Restoration</a>
+<a href=/starter-guide/docs/share/dataset/restoration/>Restoration</a>
 </li>
 </ul>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/software/>软件</a>
+<a href=/starter-guide/docs/share/software/>软件</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/env/>Conda</a>
+<a href=/starter-guide/docs/share/env/>Conda</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/share/cuda/>Cuda</a>
+<a href=/starter-guide/docs/share/cuda/>Cuda</a>
 </li>
 </ul>
 </li>
@@ -95,10 +95,10 @@ Maintainer
 <span>论文写作</span>
 <ul>
 <li>
-<a href=/ml-starter-guide/docs/writing/cite_standard/>引用规范</a>
+<a href=/starter-guide/docs/writing/cite_standard/>引用规范</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/writing/paper_search/>检索方法</a>
+<a href=/starter-guide/docs/writing/paper_search/>检索方法</a>
 </li>
 </ul>
 </li>
@@ -106,25 +106,25 @@ Maintainer
 <span>其他</span>
 <ul>
 <li>
-<a href=/ml-starter-guide/docs/others/feedback/>反馈</a>
+<a href=/starter-guide/docs/others/feedback/>反馈</a>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/others/open_source/>开源规范</a>
+<a href=/starter-guide/docs/others/open_source/>开源规范</a>
 </li>
 </ul>
 </li>
 <li>
-<a href=/ml-starter-guide/docs/recommend/>外部资源</a>
+<a href=/starter-guide/docs/recommend/>外部资源</a>
 </li>
 </ul>
 <ul>
 <li>
-<a href=/ml-starter-guide/posts/>
+<a href=/starter-guide/posts/>
 博客
 </a>
 </li>
 <li>
-<a href=https://github.com/Zeqiang-Lai/ml-starter-guide target=_blank rel=noopener>
+<a href=https://bit-isp.github.io/starter-guide target=_blank rel=noopener>
 Github
 </a>
 </li>
@@ -137,11 +137,11 @@ Github
 <header class=book-header>
 <div class="flex align-center justify-between">
 <label for=menu-control>
-<img src=/ml-starter-guide/svg/menu.svg class=book-icon alt=Menu>
+<img src=/starter-guide/svg/menu.svg class=book-icon alt=Menu>
 </label>
 <strong>如何配置趁手的命令行环境</strong>
 <label for=toc-control>
-<img src=/ml-starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
+<img src=/starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
@@ -161,7 +161,7 @@ Github
 </header>
 <article class=markdown>
 <h1>
-<a href=/ml-starter-guide/posts/better_shell/>如何配置趁手的命令行环境</a>
+<a href=/starter-guide/posts/better_shell/>如何配置趁手的命令行环境</a>
 </h1>
 <h5>
 <span> 村民1号 </span>
@@ -226,7 +226,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class=s
 <li>
 <a href=https://ohmyz.sh/>oh my zsh</a></li>
 </ul></article>
-<script src=/ml-starter-guide/js/clipboard.min.d1339707ef2b3804bac2858e9ec2d4a56e8305692fedb18db3a498c0d3736058.js></script>
+<script src=/starter-guide/js/clipboard.min.d1339707ef2b3804bac2858e9ec2d4a56e8305692fedb18db3a498c0d3736058.js></script>
 <script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.1.0/css/all.css integrity=sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt crossorigin=anonymous>
 <footer class=book-footer>
