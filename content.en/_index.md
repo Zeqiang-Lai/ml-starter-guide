@@ -18,6 +18,8 @@
 ```bash
 git clone https://github.com/bit-isp/starter-guide.git
 cd starter-guide
+
+git submodule update --init --recursive	# 克隆依赖模块
 ```
 
 ### 2. 在本地进行预览和修改
