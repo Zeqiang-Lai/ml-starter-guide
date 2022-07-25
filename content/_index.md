@@ -16,10 +16,11 @@ type: docs
 
 ## 常用指令
 
-切换 pip 源
+pip
 
 ```shell
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+pip install --upgrade package # 升级某个包
 ```
 
 训练
@@ -35,7 +36,9 @@ Linux 常用命令
 ```shell
 du -sh path # 查看文件大小
 ls -sh # 查看文件夹下的文件,并显示大小
+ls -a # 显示所有文件，包括隐藏文件
 df -h # 查看磁盘占用空间
+du -sh [dir] # 查看当前文件夹大小
 ps -f -p pid # 查看进程是谁运行的
 ```
 
