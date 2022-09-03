@@ -4,11 +4,10 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="简介 #  🌟 欢迎来到新手村。
- 这里汇总了实验室服务器相关的各种资源使用方法与教程。 常用软件推荐, 各种开发流程优化教程等等。  最近发布   光谱数据集   反馈   软件   常用指令 #  切换 pip 源
-pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ 训练
+ 这里汇总了实验室服务器相关的各种资源使用方法与教程。 常用软件推荐, 各种开发流程优化教程等等。  最近发布   光谱数据集   反馈   高光谱图像分类   常用指令 #  pip
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ pip install --upgrade package # 升级某个包 训练
 nvidia-smi export CUDA_VISIBLE_DEVICES=1 source activate /share/envs/qrnn3d Linux 常用命令
-du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示大小 df -h # 查看磁盘占用空间 ps -f -p pid # 查看进程是谁运行的 友情链接 #  来自 村民一号:
-  常用软件使用指南  机器学习基础知识  torchlight  贡献 #   欢迎贡献文档，欢迎提出意见和建议。  ">
+du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示大小 ls -a # 显示所有文件，包括隐藏文件 df -h # 查看磁盘占用空间 du -sh [dir] # 查看当前文件夹大小 ps -f -p pid # 查看进程是谁运行的 友情链接 #  来自 村民一号:">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="Introduction">
 <meta property="og:description" content>
@@ -20,7 +19,7 @@ du -sh path # 查看文件大小 ls -sh # 查看文件夹下的文件,并显示�
 <link rel=alternate hreflang=zh href=https://bit-isp.github.io/starter-guide/en/ title>
 <link rel=stylesheet href=/starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
 <script defer src=/starter-guide/flexsearch.min.js></script>
-<script defer src=/starter-guide/zh.search.min.05e6451b62765472b710a968c4f14c01f497f32a429124c9e55d16f3318f0a45.js integrity="sha256-BeZFG2J2VHK3EKloxPFMAfSX8ypCkSTJ5V0W8zGPCkU=" crossorigin=anonymous></script>
+<script defer src=/starter-guide/zh.search.min.2b28033535487b5d7b2604018ba9145535dd91901752be4b21118538bc10379f.js integrity="sha256-KygDNTVIe117JgQBi6kUVTXdkZAXUr5LIRGFOLwQN58=" crossorigin=anonymous></script>
 <script defer src=/starter-guide/sw.min.e80a57b824c4473615f86da4a1e0b6d2b39252a5deace880fd3d6fd91b00f4a6.js integrity="sha256-6ApXuCTERzYV+G2koeC20rOSUqXerOiA/T1v2RsA9KY=" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
@@ -74,6 +73,9 @@ Maintainer
 <ul>
 <li>
 <a href=/starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
+</li>
+<li>
+<a href=/starter-guide/docs/share/dataset/hsi_classification/>高光谱图像分类</a>
 </li>
 <li>
 <a href=/starter-guide/docs/share/dataset/high-level/>High Level</a>
@@ -182,15 +184,16 @@ Github
 <a href=/starter-guide/docs/others/feedback/>反馈</a>
 </li>
 <li>
-<a href=/starter-guide/docs/share/software/>软件</a>
+<a href=/starter-guide/docs/share/dataset/hsi_classification/>高光谱图像分类</a>
 </li>
 </ul>
 <h2 id=常用指令>
 常用指令
 <a class=anchor href=#%e5%b8%b8%e7%94%a8%e6%8c%87%e4%bb%a4>#</a>
 </h2>
-<p>切换 pip 源</p>
+<p>pip</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>pip config <span class=nb>set</span> global.index-url https://mirrors.aliyun.com/pypi/simple/
+pip install --upgrade package <span class=c1># 升级某个包</span>
 </code></pre></div><p>训练</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>nvidia-smi
 <span class=nb>export</span> <span class=nv>CUDA_VISIBLE_DEVICES</span><span class=o>=</span><span class=m>1</span>
@@ -198,7 +201,9 @@ Github
 </code></pre></div><p>Linux 常用命令</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>du -sh path <span class=c1># 查看文件大小</span>
 ls -sh <span class=c1># 查看文件夹下的文件,并显示大小</span>
+ls -a <span class=c1># 显示所有文件，包括隐藏文件</span>
 df -h <span class=c1># 查看磁盘占用空间</span>
+du -sh <span class=o>[</span>dir<span class=o>]</span> <span class=c1># 查看当前文件夹大小</span>
 ps -f -p pid <span class=c1># 查看进程是谁运行的</span>
 </code></pre></div><h2 id=友情链接>
 友情链接

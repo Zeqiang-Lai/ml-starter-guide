@@ -1,0 +1,601 @@
+<!doctype html><html lang=zh dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="高光谱图像分类数据集 #  1 Indian Pines #  Indian Pines由AVIRIS传感器在印第安纳州西北部的试验场上空采集。图像大小为145*145像素，包含220个波段，波段范围为0.4-2.5 (10^-6m)。
+数据来源： Indian Pines
+本地路径：/share/dataset/hsi_classification/Indian Pines
+ Ground Truth
+   # Class Samples     1 Alfalfa 46   2 Corn-notill 1428   3 Corn-mintill 830   4 Corn 237   5 Grass-pasture 483   6 Grass-trees 730   7 Grass-pasture-mowed 28   8 Hay-windrowed 478   9 Oats 20   10 Soybean-notill 972   11 Soybean-mintill 2455   12 Soybean-clean 593   13 Wheat 205   14 Woods 1265   15 Buildings-Grass-Trees-Drives 386   16 Stone-Steel-Towers 93    2 Salinas #  该场景由加利福尼亚州萨利纳斯山谷的224波段AVIRIS传感器采集，具有高空间分辨率（3.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="高光谱图像分类">
+<meta property="og:description" content="高光谱图像分类数据集 #  1 Indian Pines #  Indian Pines由AVIRIS传感器在印第安纳州西北部的试验场上空采集。图像大小为145*145像素，包含220个波段，波段范围为0.4-2.5 (10^-6m)。
+数据来源： Indian Pines
+本地路径：/share/dataset/hsi_classification/Indian Pines
+ Ground Truth
+   # Class Samples     1 Alfalfa 46   2 Corn-notill 1428   3 Corn-mintill 830   4 Corn 237   5 Grass-pasture 483   6 Grass-trees 730   7 Grass-pasture-mowed 28   8 Hay-windrowed 478   9 Oats 20   10 Soybean-notill 972   11 Soybean-mintill 2455   12 Soybean-clean 593   13 Wheat 205   14 Woods 1265   15 Buildings-Grass-Trees-Drives 386   16 Stone-Steel-Towers 93    2 Salinas #  该场景由加利福尼亚州萨利纳斯山谷的224波段AVIRIS传感器采集，具有高空间分辨率（3.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bit-isp.github.io/starter-guide/docs/share/dataset/hsi_classification/"><meta property="article:section" content="docs">
+<title>高光谱图像分类 | 深度学习新手村</title>
+<link rel=manifest href=/starter-guide/manifest.json>
+<link rel=icon href=/starter-guide/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/starter-guide/book.min.ddf4f7f7ade07930229f5b8f3c6265c0570d9885d29c73cbd01399fe84ef44bf.css integrity="sha256-3fT3963geTAin1uPPGJlwFcNmIXSnHPL0BOZ/oTvRL8=" crossorigin=anonymous>
+<script defer src=/starter-guide/flexsearch.min.js></script>
+<script defer src=/starter-guide/zh.search.min.2b28033535487b5d7b2604018ba9145535dd91901752be4b21118538bc10379f.js integrity="sha256-KygDNTVIe117JgQBi6kUVTXdkZAXUr5LIRGFOLwQN58=" crossorigin=anonymous></script>
+<script defer src=/starter-guide/sw.min.e80a57b824c4473615f86da4a1e0b6d2b39252a5deace880fd3d6fd91b00f4a6.js integrity="sha256-6ApXuCTERzYV+G2koeC20rOSUqXerOiA/T1v2RsA9KY=" crossorigin=anonymous></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSXTP92RJ"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-FKSXTP92RJ',{anonymize_ip:!1})}</script>
+<style type=text/css media=screen>@media(prefers-color-scheme:dark){.chroma{color:#f8f8f2;background-color:#272822}.chroma .x{}.chroma .err{color:#960050;background-color:#1e0010}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#66d9ef}.chroma .kc{color:#66d9ef}.chroma .kd{color:#66d9ef}.chroma .kn{color:#f92672}.chroma .kp{color:#66d9ef}.chroma .kr{color:#66d9ef}.chroma .kt{color:#66d9ef}.chroma .n{}.chroma .na{color:#a6e22e}.chroma .nb{}.chroma .bp{}.chroma .nc{color:#a6e22e}.chroma .no{color:#66d9ef}.chroma .nd{color:#a6e22e}.chroma .ni{}.chroma .ne{color:#a6e22e}.chroma .nf{color:#a6e22e}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{color:#a6e22e}.chroma .py{}.chroma .nt{color:#f92672}.chroma .nv{}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{color:#ae81ff}.chroma .ld{color:#e6db74}.chroma .s{color:#e6db74}.chroma .sa{color:#e6db74}.chroma .sb{color:#e6db74}.chroma .sc{color:#e6db74}.chroma .dl{color:#e6db74}.chroma .sd{color:#e6db74}.chroma .s2{color:#e6db74}.chroma .se{color:#ae81ff}.chroma .sh{color:#e6db74}.chroma .si{color:#e6db74}.chroma .sx{color:#e6db74}.chroma .sr{color:#e6db74}.chroma .s1{color:#e6db74}.chroma .ss{color:#e6db74}.chroma .m{color:#ae81ff}.chroma .mb{color:#ae81ff}.chroma .mf{color:#ae81ff}.chroma .mh{color:#ae81ff}.chroma .mi{color:#ae81ff}.chroma .il{color:#ae81ff}.chroma .mo{color:#ae81ff}.chroma .o{color:#f92672}.chroma .ow{color:#f92672}.chroma .p{}.chroma .c{color:#75715e}.chroma .ch{color:#75715e}.chroma .cm{color:#75715e}.chroma .c1{color:#75715e}.chroma .cs{color:#75715e}.chroma .cp{color:#75715e}.chroma .cpf{color:#75715e}.chroma .g{}.chroma .gd{color:#f92672}.chroma .ge{font-style:italic}.chroma .gr{}.chroma .gh{}.chroma .gi{color:#a6e22e}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#75715e}.chroma .gt{}.chroma .gl{}.chroma .w{}}@media(prefers-color-scheme:light){.chroma{background-color:#f8f8f8}.chroma .x{}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#7f7f7f}.chroma .k{color:#a2f;font-weight:700}.chroma .kc{color:#a2f;font-weight:700}.chroma .kd{color:#a2f;font-weight:700}.chroma .kn{color:#a2f;font-weight:700}.chroma .kp{color:#a2f}.chroma .kr{color:#a2f;font-weight:700}.chroma .kt{color:#0b0;font-weight:700}.chroma .n{}.chroma .na{color:#b44}.chroma .nb{color:#a2f}.chroma .bp{}.chroma .nc{color:#00f}.chroma .no{color:#800}.chroma .nd{color:#a2f}.chroma .ni{color:#999;font-weight:700}.chroma .ne{color:#d2413a;font-weight:700}.chroma .nf{color:#00a000}.chroma .fm{}.chroma .nl{color:#a0a000}.chroma .nn{color:#00f;font-weight:700}.chroma .nx{}.chroma .py{}.chroma .nt{color:green;font-weight:700}.chroma .nv{color:#b8860b}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#b44}.chroma .sa{color:#b44}.chroma .sb{color:#b44}.chroma .sc{color:#b44}.chroma .dl{color:#b44}.chroma .sd{color:#b44;font-style:italic}.chroma .s2{color:#b44}.chroma .se{color:#b62;font-weight:700}.chroma .sh{color:#b44}.chroma .si{color:#b68;font-weight:700}.chroma .sx{color:green}.chroma .sr{color:#b68}.chroma .s1{color:#b44}.chroma .ss{color:#b8860b}.chroma .m{color:#666}.chroma .mb{color:#666}.chroma .mf{color:#666}.chroma .mh{color:#666}.chroma .mi{color:#666}.chroma .il{color:#666}.chroma .mo{color:#666}.chroma .o{color:#666}.chroma .ow{color:#a2f;font-weight:700}.chroma .p{}.chroma .c{color:#080;font-style:italic}.chroma .ch{color:#080;font-style:italic}.chroma .cm{color:#080;font-style:italic}.chroma .c1{color:#080;font-style:italic}.chroma .cs{color:#080;font-weight:700}.chroma .cp{color:#080}.chroma .cpf{color:#080}.chroma .g{}.chroma .gd{color:#a00000}.chroma .ge{font-style:italic}.chroma .gr{color:red}.chroma .gh{color:navy;font-weight:700}.chroma .gi{color:#00a000}.chroma .go{color:#888}.chroma .gp{color:navy;font-weight:700}.chroma .gs{font-weight:700}.chroma .gu{color:purple;font-weight:700}.chroma .gt{color:#04d}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}}</style>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/starter-guide/><span>深度学习新手村</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul class=book-languages>
+<li>
+<input type=checkbox id=languages class=toggle>
+<label for=languages class="flex justify-between">
+<a role=button class="flex align-center">
+<img src=/starter-guide/svg/translate.svg class=book-icon alt=Languages>
+User
+</a>
+</label>
+<ul>
+<li>
+<a href=https://bit-isp.github.io/starter-guide/en/>
+Maintainer
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class=book-section-flat>
+<a href=/starter-guide/docs/share/>公共资源</a>
+<ul>
+<li>
+<input type=checkbox id=section-32337003e18f118a42d9d1022190d7e0 class=toggle checked>
+<label for=section-32337003e18f118a42d9d1022190d7e0 class="flex justify-between">
+<a href=/starter-guide/docs/share/dataset/>数据集</a>
+</label>
+<ul>
+<li>
+<a href=/starter-guide/docs/share/dataset/hsi/>光谱数据集</a>
+</li>
+<li>
+<a href=/starter-guide/docs/share/dataset/hsi_classification/ class=active>高光谱图像分类</a>
+</li>
+<li>
+<a href=/starter-guide/docs/share/dataset/high-level/>High Level</a>
+</li>
+<li>
+<a href=/starter-guide/docs/share/dataset/other/>Other</a>
+</li>
+<li>
+<a href=/starter-guide/docs/share/dataset/restoration/>Restoration</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=/starter-guide/docs/share/software/>软件</a>
+</li>
+<li>
+<a href=/starter-guide/docs/share/env/>Conda</a>
+</li>
+<li>
+<a href=/starter-guide/docs/share/cuda/>Cuda</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<span>论文写作</span>
+<ul>
+<li>
+<a href=/starter-guide/docs/writing/cite_standard/>引用规范</a>
+</li>
+<li>
+<a href=/starter-guide/docs/writing/paper_search/>检索方法</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<span>其他</span>
+<ul>
+<li>
+<a href=/starter-guide/docs/others/feedback/>反馈</a>
+</li>
+<li>
+<a href=/starter-guide/docs/others/open_source/>开源规范</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=/starter-guide/docs/recommend/>外部资源</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href=/starter-guide/posts/>
+博客
+</a>
+</li>
+<li>
+<a href=https://bit-isp.github.io/starter-guide target=_blank rel=noopener>
+Github
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/starter-guide/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>高光谱图像分类</strong>
+<label for=toc-control>
+<img src=/starter-guide/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#高光谱图像分类数据集>高光谱图像分类数据集</a>
+<ul>
+<li><a href=#1-indian-pines>1 Indian Pines</a></li>
+<li><a href=#2-salinas>2 Salinas</a></li>
+<li><a href=#3-pavia-center-and-university>3 Pavia Center and University</a>
+<ul>
+<li><a href=#31-pavia-center-sence>3.1 Pavia Center sence</a></li>
+<li><a href=#32-pavia-unitersity-sence>3.2 Pavia Unitersity sence</a></li>
+</ul>
+</li>
+<li><a href=#4-kennedy-space-centerksc>4 Kennedy Space Center(KSC)</a></li>
+<li><a href=#5-wuhan_uav-borne_hyperspectral_image>5 Wuhan_UAV-borne_hyperspectral_image</a>
+<ul>
+<li><a href=#51-whu-hi-hanchuan>5.1 WHU-Hi-HanChuan</a></li>
+<li><a href=#52-whu-hi-honghu>5.2 WHU-Hi-HongHu</a></li>
+<li><a href=#53-whu-hi-longkou>5.3 WHU-Hi-LongKou</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=高光谱图像分类数据集>
+高光谱图像分类数据集
+<a class=anchor href=#%e9%ab%98%e5%85%89%e8%b0%b1%e5%9b%be%e5%83%8f%e5%88%86%e7%b1%bb%e6%95%b0%e6%8d%ae%e9%9b%86>#</a>
+</h1>
+<h2 id=1-indian-pines>
+1 Indian Pines
+<a class=anchor href=#1-indian-pines>#</a>
+</h2>
+<p>Indian Pines由AVIRIS传感器在印第安纳州西北部的试验场上空采集。图像大小为145*145像素，包含220个波段，波段范围为0.4-2.5 (10^-6m)。</p>
+<p>数据来源：
+<a href=https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes>Indian Pines</a></p>
+<p>本地路径：<strong>/share/dataset/hsi_classification/Indian Pines</strong></p>
+<p>
+<img src=../imgs/hsi_classification/Indian_Pines.png alt="Indian Pines Ground Truth"></p>
+<p><strong>Ground Truth</strong></p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>#</th>
+<th style=text-align:center>Class</th>
+<th style=text-align:center>Samples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>1</td>
+<td style=text-align:center>Alfalfa</td>
+<td style=text-align:center>46</td>
+</tr>
+<tr>
+<td style=text-align:center>2</td>
+<td style=text-align:center>Corn-notill</td>
+<td style=text-align:center>1428</td>
+</tr>
+<tr>
+<td style=text-align:center>3</td>
+<td style=text-align:center>Corn-mintill</td>
+<td style=text-align:center>830</td>
+</tr>
+<tr>
+<td style=text-align:center>4</td>
+<td style=text-align:center>Corn</td>
+<td style=text-align:center>237</td>
+</tr>
+<tr>
+<td style=text-align:center>5</td>
+<td style=text-align:center>Grass-pasture</td>
+<td style=text-align:center>483</td>
+</tr>
+<tr>
+<td style=text-align:center>6</td>
+<td style=text-align:center>Grass-trees</td>
+<td style=text-align:center>730</td>
+</tr>
+<tr>
+<td style=text-align:center>7</td>
+<td style=text-align:center>Grass-pasture-mowed</td>
+<td style=text-align:center>28</td>
+</tr>
+<tr>
+<td style=text-align:center>8</td>
+<td style=text-align:center>Hay-windrowed</td>
+<td style=text-align:center>478</td>
+</tr>
+<tr>
+<td style=text-align:center>9</td>
+<td style=text-align:center>Oats</td>
+<td style=text-align:center>20</td>
+</tr>
+<tr>
+<td style=text-align:center>10</td>
+<td style=text-align:center>Soybean-notill</td>
+<td style=text-align:center>972</td>
+</tr>
+<tr>
+<td style=text-align:center>11</td>
+<td style=text-align:center>Soybean-mintill</td>
+<td style=text-align:center>2455</td>
+</tr>
+<tr>
+<td style=text-align:center>12</td>
+<td style=text-align:center>Soybean-clean</td>
+<td style=text-align:center>593</td>
+</tr>
+<tr>
+<td style=text-align:center>13</td>
+<td style=text-align:center>Wheat</td>
+<td style=text-align:center>205</td>
+</tr>
+<tr>
+<td style=text-align:center>14</td>
+<td style=text-align:center>Woods</td>
+<td style=text-align:center>1265</td>
+</tr>
+<tr>
+<td style=text-align:center>15</td>
+<td style=text-align:center>Buildings-Grass-Trees-Drives</td>
+<td style=text-align:center>386</td>
+</tr>
+<tr>
+<td style=text-align:center>16</td>
+<td style=text-align:center>Stone-Steel-Towers</td>
+<td style=text-align:center>93</td>
+</tr>
+</tbody>
+</table>
+<h2 id=2-salinas>
+2 Salinas
+<a class=anchor href=#2-salinas>#</a>
+</h2>
+<p>该场景由加利福尼亚州萨利纳斯山谷的224波段AVIRIS传感器采集，具有高空间分辨率（3.7米像素）的特点。图像大小为512*217，包含224个波段。</p>
+<p>数据来源：
+<a href=https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes>Salinas</a></p>
+<p>本地路径：<strong>/share/dataset/hsi_classification/Salinas</strong></p>
+<p>
+<img src=../imgs/hsi_classification/Salinas.png alt=Salinas></p>
+<p><strong>Ground Truth</strong></p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>#</th>
+<th style=text-align:center>Class</th>
+<th style=text-align:center>Samples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>1</td>
+<td style=text-align:center>Brocoli_green_weeds_1</td>
+<td style=text-align:center>2009</td>
+</tr>
+<tr>
+<td style=text-align:center>2</td>
+<td style=text-align:center>Brocoli_green_weeds_2</td>
+<td style=text-align:center>3726</td>
+</tr>
+<tr>
+<td style=text-align:center>3</td>
+<td style=text-align:center>Fallow</td>
+<td style=text-align:center>1976</td>
+</tr>
+<tr>
+<td style=text-align:center>4</td>
+<td style=text-align:center>Fallow_rough_plow</td>
+<td style=text-align:center>1394</td>
+</tr>
+<tr>
+<td style=text-align:center>5</td>
+<td style=text-align:center>Fallow_smooth</td>
+<td style=text-align:center>2678</td>
+</tr>
+<tr>
+<td style=text-align:center>6</td>
+<td style=text-align:center>Stubble</td>
+<td style=text-align:center>3959</td>
+</tr>
+<tr>
+<td style=text-align:center>7</td>
+<td style=text-align:center>Celery</td>
+<td style=text-align:center>3579</td>
+</tr>
+<tr>
+<td style=text-align:center>8</td>
+<td style=text-align:center>Grapes_untrained 1</td>
+<td style=text-align:center>1271</td>
+</tr>
+<tr>
+<td style=text-align:center>9</td>
+<td style=text-align:center>Soil_vinyard_develop</td>
+<td style=text-align:center>6203</td>
+</tr>
+<tr>
+<td style=text-align:center>10</td>
+<td style=text-align:center>Corn_senesced_green_weeds</td>
+<td style=text-align:center>3278</td>
+</tr>
+<tr>
+<td style=text-align:center>11</td>
+<td style=text-align:center>Lettuce_romaine_4wk</td>
+<td style=text-align:center>1068</td>
+</tr>
+<tr>
+<td style=text-align:center>12</td>
+<td style=text-align:center>Lettuce_romaine_5wk</td>
+<td style=text-align:center>1927</td>
+</tr>
+<tr>
+<td style=text-align:center>13</td>
+<td style=text-align:center>Lettuce_romaine_6wk</td>
+<td style=text-align:center>916</td>
+</tr>
+<tr>
+<td style=text-align:center>14</td>
+<td style=text-align:center>Lettuce_romaine_7wk</td>
+<td style=text-align:center>1070</td>
+</tr>
+<tr>
+<td style=text-align:center>15</td>
+<td style=text-align:center>Vinyard_untrained</td>
+<td style=text-align:center>7268</td>
+</tr>
+<tr>
+<td style=text-align:center>16</td>
+<td style=text-align:center>Vinyard_vertical_trellis</td>
+<td style=text-align:center>1807</td>
+</tr>
+</tbody>
+</table>
+<h2 id=3-pavia-center-and-university>
+3 Pavia Center and University
+<a class=anchor href=#3-pavia-center-and-university>#</a>
+</h2>
+<p>Pavia Center和Pavia University数据集由ROSIS传感器在意大利Pavia城市上空采集。</p>
+<p>数据来源：
+<a href=https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes>Pavia</a></p>
+<p>本地路径：<strong>/share/dataset/hsi_classification/Pavia</strong></p>
+<h3 id=31-pavia-center-sence>
+3.1 Pavia Center sence
+<a class=anchor href=#31-pavia-center-sence>#</a>
+</h3>
+<p>Pavia Center图像大小为1096*715，包含102个波段。</p>
+<p>
+<img src=../imgs/hsi_classification/Pavia_Center.png alt="Pavia Center"></p>
+<p><strong>Ground Truth</strong></p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>#</th>
+<th style=text-align:center>Class Samples</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>1</td>
+<td style=text-align:center>Water</td>
+<td style=text-align:center>824</td>
+</tr>
+<tr>
+<td style=text-align:center>2</td>
+<td style=text-align:center>Trees</td>
+<td style=text-align:center>820</td>
+</tr>
+<tr>
+<td style=text-align:center>3</td>
+<td style=text-align:center>Asphalt</td>
+<td style=text-align:center>816</td>
+</tr>
+<tr>
+<td style=text-align:center>4</td>
+<td style=text-align:center>Self-Blocking Bricks</td>
+<td style=text-align:center>808</td>
+</tr>
+<tr>
+<td style=text-align:center>5</td>
+<td style=text-align:center>Bitumen</td>
+<td style=text-align:center>808</td>
+</tr>
+<tr>
+<td style=text-align:center>6</td>
+<td style=text-align:center>Tiles 1</td>
+<td style=text-align:center>260</td>
+</tr>
+<tr>
+<td style=text-align:center>7</td>
+<td style=text-align:center>Shadows</td>
+<td style=text-align:center>476</td>
+</tr>
+<tr>
+<td style=text-align:center>8</td>
+<td style=text-align:center>Meadows</td>
+<td style=text-align:center>824</td>
+</tr>
+<tr>
+<td style=text-align:center>9</td>
+<td style=text-align:center>Bare Soil</td>
+<td style=text-align:center>820</td>
+</tr>
+</tbody>
+</table>
+<p>Pavia Center图像大小为1096*715，包含102个波段。</p>
+<h3 id=32-pavia-unitersity-sence>
+3.2 Pavia Unitersity sence
+<a class=anchor href=#32-pavia-unitersity-sence>#</a>
+</h3>
+<p>Pavia Unitersity sence图像大小为610*340，包含103个波段。</p>
+<p>
+<img src=../imgs/hsi_classification/Pavia_University.png alt="Pavia University"></p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>#</th>
+<th style=text-align:center>Class Samples</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>1</td>
+<td style=text-align:center>Asphalt</td>
+<td style=text-align:center>6631</td>
+</tr>
+<tr>
+<td style=text-align:center>2</td>
+<td style=text-align:center>Meadows</td>
+<td style=text-align:center>18649</td>
+</tr>
+<tr>
+<td style=text-align:center>3</td>
+<td style=text-align:center>Gravel</td>
+<td style=text-align:center>2099</td>
+</tr>
+<tr>
+<td style=text-align:center>4</td>
+<td style=text-align:center>Trees</td>
+<td style=text-align:center>3064</td>
+</tr>
+<tr>
+<td style=text-align:center>5</td>
+<td style=text-align:center>Painted metal sheets</td>
+<td style=text-align:center>1345</td>
+</tr>
+<tr>
+<td style=text-align:center>6</td>
+<td style=text-align:center>Bare Soil</td>
+<td style=text-align:center>5029</td>
+</tr>
+<tr>
+<td style=text-align:center>7</td>
+<td style=text-align:center>Bitumen</td>
+<td style=text-align:center>1330</td>
+</tr>
+<tr>
+<td style=text-align:center>8</td>
+<td style=text-align:center>Self-Blocking Bricks</td>
+<td style=text-align:center>3682</td>
+</tr>
+<tr>
+<td style=text-align:center>9</td>
+<td style=text-align:center>Shadows</td>
+<td style=text-align:center>947</td>
+</tr>
+</tbody>
+</table>
+<h2 id=4-kennedy-space-centerksc>
+4 Kennedy Space Center(KSC)
+<a class=anchor href=#4-kennedy-space-centerksc>#</a>
+</h2>
+<p>Kennedy数据集由AVIRIS传感器在美国佛罗里达州肯尼迪航天中心获取数据。图像大小为512*614，包含176个波段</p>
+<p>数据来源：
+<a href=https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes>Kennedy</a></p>
+<p>本地路径：<strong>/share/dataset/hsi_classification/Kennedy_Space_Center</strong></p>
+<p>
+<img src=../imgs/hsi_classification/Kennedy_Space_Center.gif alt="Kennedy Space Center"></p>
+<h2 id=5-wuhan_uav-borne_hyperspectral_image>
+5 Wuhan_UAV-borne_hyperspectral_image
+<a class=anchor href=#5-wuhan_uav-borne_hyperspectral_image>#</a>
+</h2>
+<p>WuHan_Hi数据集由Headwall Nano-Hyperspec传感器采集。包含LongKou(龙口)、HanChuan(汉川)、HongHu(洪湖)三个数据集。</p>
+<p>数据来源：
+<a href=http://rsidea.whu.edu.cn/resource_WHUHi_sharing.htm>武汉大学——智能化遥感数据提取分析与应用研究组</a></p>
+<h3 id=51-whu-hi-hanchuan>
+5.1 WHU-Hi-HanChuan
+<a class=anchor href=#51-whu-hi-hanchuan>#</a>
+</h3>
+<p>HanChuan图像大小为1217*303，包含274个波段</p>
+<h3 id=52-whu-hi-honghu>
+5.2 WHU-Hi-HongHu
+<a class=anchor href=#52-whu-hi-honghu>#</a>
+</h3>
+<p>HongHu图像大小为940*475，包含270个波段</p>
+<h3 id=53-whu-hi-longkou>
+5.3 WHU-Hi-LongKou
+<a class=anchor href=#53-whu-hi-longkou>#</a>
+</h3>
+<p>LongKou图像大小为550*400，包含270个波段</p>
+</article>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.1.0/css/all.css integrity=sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt crossorigin=anonymous>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+<div style=text-align:center;color:#585858>
+<span id=busuanzi_container_page_pv>累计访问:<span id=busuanzi_value_page_pv></span>次</span>
+</div>
+</footer>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#高光谱图像分类数据集>高光谱图像分类数据集</a>
+<ul>
+<li><a href=#1-indian-pines>1 Indian Pines</a></li>
+<li><a href=#2-salinas>2 Salinas</a></li>
+<li><a href=#3-pavia-center-and-university>3 Pavia Center and University</a>
+<ul>
+<li><a href=#31-pavia-center-sence>3.1 Pavia Center sence</a></li>
+<li><a href=#32-pavia-unitersity-sence>3.2 Pavia Unitersity sence</a></li>
+</ul>
+</li>
+<li><a href=#4-kennedy-space-centerksc>4 Kennedy Space Center(KSC)</a></li>
+<li><a href=#5-wuhan_uav-borne_hyperspectral_image>5 Wuhan_UAV-borne_hyperspectral_image</a>
+<ul>
+<li><a href=#51-whu-hi-hanchuan>5.1 WHU-Hi-HanChuan</a></li>
+<li><a href=#52-whu-hi-honghu>5.2 WHU-Hi-HongHu</a></li>
+<li><a href=#53-whu-hi-longkou>5.3 WHU-Hi-LongKou</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
